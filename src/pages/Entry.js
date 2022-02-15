@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx, keyframes } from '@emotion/react';
-import React from 'react';
+import { HOME_PATH } from '../configs/AppConfig';
+
 import { Link } from 'react-router-dom';
 
 const wrapperStyle = css`
@@ -68,20 +69,37 @@ const dynamicTextStyle = css`
   }
 `;
 
+const buttonStyle = css`
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 30px;
+  box-shadow: 1px 3px 10px #fff;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+`;
+
 const Entry = () => {
   return (
     <div css={wrapperStyle}>
       <div css={divStyle}>
-        <div css={staticTextStyle}>I'm</div>
+        <div css={staticTextStyle}>It's</div>
         <ul css={dynamicTextStyle}>
           <li>
-            <span>Lonnie</span>
+            <span>Lonnie's Tech Blog</span>
           </li>
           <li>
-            <span>Developer</span>
+            <span>My Develop Story</span>
           </li>
         </ul>
       </div>
+      <button css={buttonStyle}>
+        <Link to={HOME_PATH}>Click here!</Link>
+      </button>
     </div>
   );
 };
