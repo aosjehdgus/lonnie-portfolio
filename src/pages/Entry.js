@@ -4,7 +4,16 @@ import { HOME_PATH } from '../configs/AppConfig';
 
 import { Link } from 'react-router-dom';
 
-const breakpoints = [576, 768, 992, 1200];
+const breakpoints = [370, 576, 768, 992, 1200];
+
+const white = 'rgb(255, 255, 255)';
+const deepTaupe = 'rgb(123, 102, 96)';
+const whiteSand = 'rgb(219, 213, 209)';
+const fuchsiaPink = 'rgb(223, 136, 183)';
+const tawnyOrange = 'rgb(211, 128, 111)';
+const veryPeri = 'rgb(102, 103, 171)';
+const cornSilk = 'rgb(237, 195, 115)';
+const paradisePink = 'rgb(228, 69, 94)';
 
 const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 
@@ -13,7 +22,7 @@ const wrapperStyle = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #082032;
+  background-color: ${cornSilk};
   margin: 0;
   padding: 0;
   border: 0;
@@ -43,9 +52,9 @@ const slide = keyframes`
 `;
 
 const staticTextStyle = css`
-  color: #fff;
-  font-size: 40px;
-  font-weight: 400;
+  color: ${white};
+  font-size: 30px;
+  font-weight: 600;
 `;
 
 const dynamicTextStyle = css`
@@ -55,9 +64,9 @@ const dynamicTextStyle = css`
   padding-left: 20px;
   li {
     list-style: none;
-    color: #ff4c29;
-    font-size: 40px;
-    font-weihgt: 500;
+    color: ${paradisePink};
+    font-size: 30px;
+    font-weight: 600;
     top: 0;
     position: relative;
     animation: ${slide} 6s steps(2) infinite;
@@ -68,8 +77,8 @@ const dynamicTextStyle = css`
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #082032;
-    border-left: 2px solid #ff4c29;
+    background-color: rgb(237, 195, 115);
+    border-left: 2px solid ${paradisePink};
     animation: ${typing} 3s steps(9) infinite;
   }
 `;
@@ -77,13 +86,13 @@ const dynamicTextStyle = css`
 const buttonStyle = css`
   border: 1px solid #fff;
   border-radius: 12px;
-  padding: 10px;
+  padding: 15px;
   background-color: inherit;
   cursor: pointer;
-  font-size: 30px;
-  box-shadow: 1px 3px 10px #fff;
+  font-size: 28px;
+  box-shadow: 2px 3px 3px #fff;
   a {
-    color: #fff;
+    color: ${white};
     text-decoration: none;
   }
 `;
@@ -96,9 +105,12 @@ const Entry = () => {
           css={css`
             ${staticTextStyle}
             ${mq[0]} {
+              font-size: 35px;
+            }
+            ${mq[1]} {
               font-size: 50px;
             }
-            ${mq[0]} {
+            ${mq[2]} {
               font-size: 60px;
             }
           `}
@@ -110,10 +122,15 @@ const Entry = () => {
             ${dynamicTextStyle}
             ${mq[0]} {
               li {
-                font-size: 50px;
+                font-size: 35px;
               }
             }
             ${mq[1]} {
+              li {
+                font-size: 50px;
+              }
+            }
+            ${mq[2]} {
               li {
                 font-size: 60px;
               }
