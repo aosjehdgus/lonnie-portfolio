@@ -2,6 +2,9 @@ import { css } from '@emotion/react';
 
 const GlobalStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+  * {
+    font-family: 'Varela Round', sans-serif;
+  }
   html,
   body,
   div,
@@ -87,7 +90,6 @@ const GlobalStyle = css`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -125,9 +127,6 @@ const GlobalStyle = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  }
-  * {
-    font-family: 'Varela Round', sans-serif;
   }
 `;
 export default GlobalStyle;
