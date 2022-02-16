@@ -4,6 +4,10 @@ import { HOME_PATH } from '../configs/AppConfig';
 
 import { Link } from 'react-router-dom';
 
+const breakpoints = [576, 768, 992, 1200];
+
+const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+
 const wrapperStyle = css`
   display: flex;
   flex-direction: column;
@@ -19,6 +23,7 @@ const wrapperStyle = css`
 
 const divStyle = css`
   display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -39,7 +44,7 @@ const slide = keyframes`
 
 const staticTextStyle = css`
   color: #fff;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 400;
 `;
 
@@ -51,7 +56,7 @@ const dynamicTextStyle = css`
   li {
     list-style: none;
     color: #ff4c29;
-    font-size: 60px;
+    font-size: 40px;
     font-weihgt: 500;
     top: 0;
     position: relative;
@@ -87,8 +92,34 @@ const Entry = () => {
   return (
     <div css={wrapperStyle}>
       <div css={divStyle}>
-        <div css={staticTextStyle}>It's</div>
-        <ul css={dynamicTextStyle}>
+        <div
+          css={css`
+            ${staticTextStyle}
+            ${mq[0]} {
+              font-size: 50px;
+            }
+            ${mq[0]} {
+              font-size: 60px;
+            }
+          `}
+        >
+          It's
+        </div>
+        <ul
+          css={css`
+            ${dynamicTextStyle}
+            ${mq[0]} {
+              li {
+                font-size: 50px;
+              }
+            }
+            ${mq[1]} {
+              li {
+                font-size: 60px;
+              }
+            }
+          `}
+        >
           <li>
             <span>Lonnie's Tech Blog</span>
           </li>
