@@ -12,8 +12,16 @@ module.exports = {
   devtool: 'eval-cheap-source-map',
   devServer: {
     hot: true,
+    open: true,
+    port: 8080,
+    compress: true,
+    historyApiFallback: true,
     client: {
+      progress: true,
       overlay: true,
+    },
+    static: {
+      publicPath: '/dist/',
     },
   },
   output: {
