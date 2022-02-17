@@ -34,6 +34,7 @@ const divStyle = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 `;
 
 const typing = keyframes`
@@ -89,7 +90,8 @@ const buttonStyle = css`
   padding: 15px;
   background-color: inherit;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 26px;
+  margin-top: 10px;
   box-shadow: 2px 3px 3px #fff;
   a {
     color: ${white};
