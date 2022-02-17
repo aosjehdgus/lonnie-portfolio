@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div>
-      <h1>홈</h1>
+      <h1>Home</h1>
+      <p>Home 페이지</p>
     </div>
   );
 };
