@@ -6,6 +6,9 @@ const GlobalStyle = css`
     font-family: 'Varela Round', sans-serif;
   }
   html,
+  html {
+    font-size: 18px;
+  }
   body,
   div,
   span,
