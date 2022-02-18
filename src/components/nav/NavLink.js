@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NAV_CONFIG from '../../configs/NavConfig';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const navLinkWrapper = css`
   display: flex;
@@ -30,10 +30,21 @@ const navListItem = (prop) => css`
 
 const NavLink = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const location = useLocation();
 
   const handleNavIndex = (prop) => {
     setSelectedIndex(prop);
   };
+
+  useEffect(() => {
+    NAV_CONFIG.map((config, index) => {
+      if (location.pathname === config.path) {
+        setSelectedIndex(index);
+      }
+    });
+  }, []);
+
+  console.log(selectedIndex);
 
   return (
     <ul css={navLinkWrapper}>
