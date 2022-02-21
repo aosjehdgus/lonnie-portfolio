@@ -3,6 +3,7 @@ import { css, jsx } from '@emotion/react';
 import NavTitle from './NavTitle';
 import NavList from './NavList';
 import NavLink from './NavLink';
+import NavToggle from './NavToggle';
 import NAV_CONFIG from '../../../configs/NavConfig';
 
 const cornSilk = 'rgb(237, 195, 115)';
@@ -36,6 +37,7 @@ const HorizontalNav = () => {
             return <NavLink key={item.path} item={item} />;
           })}
         </NavList>
+        <NavToggle />
       </ul>
     </nav>
   );
