@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import NavTitle from './NavTitle';
-import NavLink from '../NavLink';
+import NavList from './NavList';
+import NavLink from './NavLink';
+import NAV_CONFIG from '../../../configs/NavConfig';
 
 const cornSilk = 'rgb(237, 195, 115)';
 
@@ -17,11 +19,24 @@ const horizontalNavWrapper = css`
   background: ${cornSilk};
 `;
 
+const navListWrapper = css`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 30px 10px 10px;
+`;
+
 const HorizontalNav = () => {
   return (
     <nav css={horizontalNavWrapper}>
       <NavTitle />
-      <NavLink />
+      <ul css={navListWrapper}>
+        <NavList>
+          {NAV_CONFIG.map((item, index) => {
+            return <NavLink key={item.path} item={item} />;
+          })}
+        </NavList>
+      </ul>
     </nav>
   );
 };
