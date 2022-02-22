@@ -12,7 +12,7 @@ const veryPeri = 'rgb(102, 103, 171)';
 const cornSilk = 'rgb(237, 195, 115)';
 const paradisePink = 'rgb(228, 69, 94)';
 
-const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
 const wrapperStyle = css`
   display: flex;
@@ -81,6 +81,7 @@ const dynamicTextStyle = css`
   }
 `;
 
+// eslint-disable-next-line react/function-component-definition
 const Home = () => {
   return (
     <div css={wrapperStyle}>

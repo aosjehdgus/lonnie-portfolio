@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/react';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-const navListItem = (prop) => css`
+const navListItem = prop => css`
   padding: 0.5rem;
   margint: 0.5rem;
   cursor: pointer;
@@ -25,11 +25,12 @@ const NavList = ({ children }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const location = useLocation();
 
-  const handleNavIndex = (prop) => {
+  const handleNavIndex = prop => {
     setSelectedIndex(prop);
   };
 
   useEffect(() => {
+    // eslint-disable-next-line array-callback-return
     children.map((child, index) => {
       if (child.key === location.pathname) {
         setSelectedIndex(index);
@@ -40,7 +41,7 @@ const NavList = ({ children }) => {
   return children.map((child, index) => {
     return (
       <li
-        key={index}
+        key={child.key}
         onClick={() => handleNavIndex(index)}
         css={navListItem(selectedIndex === index)}
       >

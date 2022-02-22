@@ -92,19 +92,16 @@ const navToggle = css`
 
 const NavToggle = () => {
   return (
-    <>
-      <div css={navToggle}>
-        <input type="checkbox" id="chk1" />
+    <div css={navToggle}>
+      <input type="checkbox" id="chk1" />
+      <label htmlFor="chk1">
+        <span>''</span>
 
-        <label htmlFor="chk1">
+        <div>
           <span>''</span>
-
-          <div>
-            <span>''</span>
-          </div>
-        </label>
-      </div>
-    </>
+        </div>
+      </label>
+    </div>
   );
 };
 
