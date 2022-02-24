@@ -33,7 +33,7 @@ const HorizontalNav = () => {
       <NavTitle />
       <ul css={navListWrapper}>
         <NavList>
-          {NAV_CONFIG.map((item, _index) => {
+          {NAV_CONFIG.map(item => {
             return <NavLink key={item.path} item={item} />;
           })}
         </NavList>
