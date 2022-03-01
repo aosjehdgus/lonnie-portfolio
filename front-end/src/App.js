@@ -1,8 +1,7 @@
 /** @jsx jsx */
-
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { css, jsx } from '@emotion/react';
+import { SWRConfig } from 'swr';
 
 import { HOME_PATH, PROFILE_PATH, CONTACT_PATH } from './configs/AppConfig';
 
@@ -17,7 +16,13 @@ const appContainer = css`
 
 const App = () => {
   return (
-    <>
+    <SWRConfig
+      value={{
+        refreshInterval: 3000,
+        fetcher: (resource, init) =>
+          fetch(resource, init).then(res => res.json()),
+      }}
+    >
       <header>
         <NavBar />
       </header>
@@ -28,7 +33,7 @@ const App = () => {
           <Route path={CONTACT_PATH} element={<Contact />} />
         </Routes>
       </main>
-    </>
+    </SWRConfig>
   );
 };
 
