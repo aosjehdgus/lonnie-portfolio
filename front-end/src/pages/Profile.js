@@ -1,7 +1,7 @@
 import React from 'react';
 import useSWR from 'swr';
 import { MOCK_URL } from '../configs/AppConfig';
-import Spinner from '../components/spinner';
+import Spinner from '../components/common/controls/spinner';
 
 const fetcher = (...args) => fetch(...args).then(res => res.json());
 

@@ -4,7 +4,7 @@ import NavTitle from './NavTitle';
 import NavList from './NavList';
 import NavLink from './NavLink';
 import NavToggle from './NavToggle';
-import NAV_CONFIG from '../../configs/NavConfig';
+import NAV_CONFIG from '../../../configs/NavConfig';
 
 const cornSilk = 'rgb(237, 195, 115)';
 
