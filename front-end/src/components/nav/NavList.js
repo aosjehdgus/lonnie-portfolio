@@ -5,13 +5,13 @@ import { useState, useEffect } from 'react';
 
 const navListItem = prop => css`
   padding: 0.5rem;
-  margint: 0.5rem;
+  margin: 1rem;
   cursor: pointer;
   a {
     color: ${prop === true
       ? 'rgba(255, 255, 255, 1)'
       : 'rgba(255, 255, 255, 0.8)'};
-    font-size: ${prop === true ? 1.2 : 1}rem;
+    font-size: ${prop === true ? 1.5 : 1.2}rem;
     font-weight: ${prop === true ? 700 : 500};
     text-decoration: none;
   }

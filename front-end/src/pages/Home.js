@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { css, jsx, keyframes } from '@emotion/react';
 
-const breakpoints = [370, 576, 768, 992, 1200];
-
 const white = 'rgb(255, 255, 255)';
 const deepTaupe = 'rgb(123, 102, 96)';
 const whiteSand = 'rgb(219, 213, 209)';
@@ -12,6 +10,7 @@ const veryPeri = 'rgb(102, 103, 171)';
 const cornSilk = 'rgb(237, 195, 115)';
 const paradisePink = 'rgb(228, 69, 94)';
 
+const breakpoints = [370, 576, 768, 992, 1200];
 const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
 const wrapperStyle = css`
@@ -51,7 +50,7 @@ const slide = keyframes`
 
 const staticTextStyle = css`
   color: ${veryPeri};
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: 600;
 `;
 
@@ -63,7 +62,7 @@ const dynamicTextStyle = css`
   li {
     list-style: none;
     color: ${paradisePink};
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: 600;
     top: 0;
     position: relative;
@@ -90,13 +89,16 @@ const Home = () => {
           css={css`
             ${staticTextStyle}
             ${mq[0]} {
-              font-size: 35px;
+              font-size: 2rem;
             }
             ${mq[1]} {
-              font-size: 50px;
+              font-size: 3rem;
             }
             ${mq[2]} {
-              font-size: 60px;
+              font-size: 4rem;
+            }
+            ${mq[3]} {
+              font-size: 5rem;
             }
           `}
         >
@@ -107,26 +109,31 @@ const Home = () => {
             ${dynamicTextStyle}
             ${mq[0]} {
               li {
-                font-size: 35px;
+                font-size: 2rem;
               }
             }
             ${mq[1]} {
               li {
-                font-size: 50px;
+                font-size: 3rem;
               }
             }
             ${mq[2]} {
               li {
-                font-size: 60px;
+                font-size: 4rem;
+              }
+            }
+            ${mq[3]} {
+              li {
+                font-size: 5rem;
               }
             }
           `}
         >
           <li>
-            <span>Lonnie's Tech Blog</span>
+            <span>Lonnie's Portfolio</span>
           </li>
           <li>
-            <span>My Develop Story</span>
+            <span>Development Story</span>
           </li>
         </ul>
       </div>
