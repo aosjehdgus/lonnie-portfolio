@@ -6,7 +6,7 @@ import { css, jsx } from '@emotion/react';
 
 import { HOME_PATH, PROFILE_PATH, TECH_PATH } from './configs/AppConfig';
 
-import HorizontalNav from './components/nav/horizontal-nav';
+import NavBar from './components/nav';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Tech from './pages/Tech';
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
       <header>
-        <HorizontalNav />
+        <NavBar />
       </header>
       <main css={appContainer}>
         <Routes>

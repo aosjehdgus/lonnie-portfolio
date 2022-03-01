@@ -4,7 +4,7 @@ import NavTitle from './NavTitle';
 import NavList from './NavList';
 import NavLink from './NavLink';
 import NavToggle from './NavToggle';
-import NAV_CONFIG from '../../../configs/NavConfig';
+import NAV_CONFIG from '../../configs/NavConfig';
 
 const cornSilk = 'rgb(237, 195, 115)';
 
@@ -27,7 +27,7 @@ const navListWrapper = css`
   padding: 10px 30px 10px 10px;
 `;
 
-const HorizontalNav = () => {
+const NavBar = () => {
   return (
     <nav css={horizontalNavWrapper}>
       <NavTitle />
@@ -43,4 +43,4 @@ const HorizontalNav = () => {
   );
 };
 
-export default HorizontalNav;
+export default NavBar;

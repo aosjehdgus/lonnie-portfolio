@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import { Link } from 'react-router-dom';
-import { HOME_PATH } from '../../../configs/AppConfig';
+import { HOME_PATH } from '../../configs/AppConfig';
 
 const navigationTitle = css`
   padding: 10px;
