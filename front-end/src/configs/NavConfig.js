@@ -1,10 +1,4 @@
-import {
-  HOME_PATH,
-  PROFILE_PATH,
-  PROJECT_PATH,
-  SKILL_PATH,
-  TECH_PATH,
-} from './AppConfig';
+import { HOME_PATH, PROFILE_PATH, TECH_PATH } from './AppConfig';
 
 export const HOME = [
   {
@@ -20,19 +14,6 @@ export const PROFILE = [
   },
 ];
 
-export const SKILL = [
-  {
-    title: 'Skill',
-    path: SKILL_PATH,
-  },
-];
-
-export const PROJECT = [
-  {
-    title: 'Project',
-    path: PROJECT_PATH,
-  },
-];
 export const TECH = [
   {
     title: 'Tech',
@@ -40,6 +21,6 @@ export const TECH = [
   },
 ];
 
-const NAV_CONFIG = [...HOME, ...PROFILE, ...SKILL, ...PROJECT, ...TECH];
+const NAV_CONFIG = [...HOME, ...PROFILE, ...TECH];
 
 export default NAV_CONFIG;
