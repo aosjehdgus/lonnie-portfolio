@@ -6,7 +6,7 @@ const tawnyOrange = 'rgb(211, 128, 111)';
 const contentTitle = css`
   font-size: 2rem;
   padding: 1rem 0.7rem 1rem 0.7rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   border-radius: 1rem;
   background: ${tawnyOrange};
   color: white;
