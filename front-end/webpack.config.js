@@ -27,6 +27,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
   module: {
     rules: [
@@ -40,11 +41,16 @@ module.exports = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       },
       {
-        test: /\.jfif$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-        },
+        test: /\.png/,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.jpg/,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.txt/,
+        type: 'asset/source',
       },
     ],
   },
