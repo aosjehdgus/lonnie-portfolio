@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Global } from '@emotion/react';
+import App from './App';
 import GlobalStyle from './GlobalStyle';
 
 ReactDOM.render(
@@ -10,5 +10,5 @@ ReactDOM.render(
     <Global styles={GlobalStyle} />
     <App />
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

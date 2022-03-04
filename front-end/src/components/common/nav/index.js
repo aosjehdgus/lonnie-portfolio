@@ -18,6 +18,7 @@ const horizontalNavWrapper = css`
   padding: 5px 0 15px 10px;
   margin-bottom: 20px;
   background: ${cornSilk};
+  z-index: 1;
 `;
 
 const navListWrapper = css`
