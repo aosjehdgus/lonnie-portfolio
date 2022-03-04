@@ -43,17 +43,13 @@ const ProjectContent = () => {
       </header>
       <article css={aboutArticleWrapper}>
         <section css={aboutSectionWrapper}>
-          <div>{name}</div>
-          <div>{birthday}</div>
+          <div>project</div>
           <div>
-            {university.name} {university.major}( {university.grade}/
-            {university.totalGrade})
+            <div>project</div>
           </div>
         </section>
         <section css={aboutSectionWrapper}>
-          <div>{email}</div>
-          <div>{github}</div>
-          <div>{blog}</div>
+          <div>project</div>
         </section>
       </article>
     </div>

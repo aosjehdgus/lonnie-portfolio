@@ -43,17 +43,13 @@ const SkillContent = () => {
       </header>
       <article css={aboutArticleWrapper}>
         <section css={aboutSectionWrapper}>
-          <div>{name}</div>
-          <div>{birthday}</div>
+          <div>skill</div>
           <div>
-            {university.name} {university.major}( {university.grade}/
-            {university.totalGrade})
+            <div>skill</div>
           </div>
         </section>
         <section css={aboutSectionWrapper}>
-          <div>{email}</div>
-          <div>{github}</div>
-          <div>{blog}</div>
+          <div>skill</div>
         </section>
       </article>
     </div>

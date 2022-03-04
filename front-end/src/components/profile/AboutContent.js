@@ -20,6 +20,7 @@ const aboutContentContainer = css`
   height: calc(100% - 11rem);
   border-radius: 1rem;
   padding: 0.5rem;
+  position: relative;
   header {
     h2 {
       padding: 1rem;
@@ -80,9 +81,9 @@ const contentWrapper = css`
 
 const AboutContent = () => {
   const { profile, isLoading } = useProfile();
-  const { name, birth, university, email, github, blog } = profile || {};
+  // const { name, birth, university, email, github, blog } = profile || {};
 
-  const birthday = moment(birth).format('YYYY.MM.DD');
+  // const birthday = moment(birth).format('YYYY.MM.DD');
 
   return isLoading ? (
     <Spinner />
@@ -100,14 +101,14 @@ const AboutContent = () => {
             <FaUser size={45} color="rgba(0, 0, 0, 0.7)" />
             <div>
               <h3>이름</h3>
-              <span>{name}</span>
+              {/* <span>{name}</span> */}
             </div>
           </div>
           <div css={contentWrapper}>
             <FaBirthdayCake size={45} color="rgba(0, 0, 0, 0.7)" />
             <div>
               <h3>생년월일</h3>
-              <span>{birthday}</span>
+              {/* <span>{birthday}</span> */}
             </div>
           </div>
         </section>
@@ -116,9 +117,7 @@ const AboutContent = () => {
             <FaUniversity size={45} color="rgba(0, 0, 0, 0.7)" />
             <div>
               <h3>학력</h3>
-              <span>
-                {university.name} {university.major}
-              </span>
+              <span>{/* {university.name} {university.major} */}</span>
               {/* <span>
                 {university.grade}/{university.totalGrade}
               </span> */}
@@ -128,7 +127,7 @@ const AboutContent = () => {
             <MdEmail size={45} color="rgba(0, 0, 0, 0.7)" />
             <div>
               <h3>이메일</h3>
-              <a href="mailto:kdhsea@gmail.com">{email}</a>
+              {/* <a href="mailto:kdhsea@gmail.com">{email}</a> */}
             </div>
           </div>
         </section>
@@ -137,18 +136,18 @@ const AboutContent = () => {
             <FaGithub size={45} color="rgba(0, 0, 0, 0.7)" />
             <div>
               <h3>깃허브</h3>
-              <a href={`https://${github}`} target="_blank" rel="noreferrer">
+              {/* <a href={`https://${github}`} target="_blank" rel="noreferrer">
                 {github}
-              </a>
+              </a> */}
             </div>
           </div>
           <div css={contentWrapper}>
             <FaClipboardList size={45} color="rgba(0, 0, 0, 0.7)" />
             <div>
               <h3>블로그</h3>
-              <a href={`https://${blog}`} target="_blank" rel="noreferrer">
+              {/* <a href={`https://${blog}`} target="_blank" rel="noreferrer">
                 {blog}
-              </a>
+              </a> */}
             </div>
           </div>
         </section>

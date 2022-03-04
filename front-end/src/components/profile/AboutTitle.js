@@ -11,6 +11,7 @@ const contentTitle = css`
   background: ${tawnyOrange};
   color: white;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
 `;
 
 const AboutTitle = () => {
