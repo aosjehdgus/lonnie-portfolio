@@ -1,15 +1,27 @@
 import React from 'react';
+/* Layout */
+import ProfileLayout from '../layouts/profile/ProfileLayout';
+/* Content */
+import AboutContent from '../contents/profile/AboutContent';
+import ArchiveContent from '../contents/profile/ArchiveContent';
+import SkillContent from '../contents/profile/SkillContent';
+import CareerContent from '../contents/profile/CareerContent';
+import ProjectContent from '../contents/profile/ProjectContent';
 
-import About from '../components/profile/About';
-import Project from '../components/profile/Project';
-import Skill from '../components/profile/Skill';
+const profileConfig = [
+  { title: 'About', content: <AboutContent /> },
+  { title: 'Archive', content: <ArchiveContent /> },
+  { title: 'Skill', content: <SkillContent /> },
+  { title: 'Career', content: <CareerContent /> },
+  { title: 'Project', content: <ProjectContent /> },
+];
 
 const Profile = () => {
   return (
     <>
-      <About />
-      <Skill />
-      <Project />
+      {profileConfig.map(({ title, content }) => {
+        return <ProfileLayout title={title} content={content} />;
+      })}
     </>
   );
 };
