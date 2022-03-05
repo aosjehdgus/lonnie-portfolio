@@ -13,7 +13,6 @@ import Contact from './pages/Contact';
 const appContainer = prop => css`
   padding-top: 140px;
   position: relative;
-  height: calc(100vh - 140px);
   z-index: 0;
   ${prop === 'home'
     ? ''
