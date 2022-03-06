@@ -1,10 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import {
-  FRONT_CONFIG,
-  BACK_CONFIG,
-  CLOUD_CONFIG,
-} from '../../configs/SkillConfig';
+
+import { FRONT_SKILL, BACK_SKILL, CLOUD_SKILL } from '../../constants/Skill';
 
 import useProfile from '../../swr/useProfile';
 import Spinner from '../../components/common/Spinner';
@@ -66,7 +63,7 @@ const SkillContent = () => {
   ) : (
     <div css={skillContentContainer}>
       <section>
-        {FRONT_CONFIG.map(({ name, description, proficiency, icon }) => {
+        {FRONT_SKILL.map(({ name, description, proficiency, icon }) => {
           return (
             <article css={skillContentWrapper}>
               {icon}
@@ -82,7 +79,7 @@ const SkillContent = () => {
         })}
       </section>
       <section>
-        {BACK_CONFIG.map(({ name, description, proficiency, icon }) => {
+        {BACK_SKILL.map(({ name, description, proficiency, icon }) => {
           return (
             <article css={skillContentWrapper}>
               {icon}
@@ -98,7 +95,7 @@ const SkillContent = () => {
         })}
       </section>
       <section>
-        {CLOUD_CONFIG.map(({ name, description, proficiency, icon }) => {
+        {CLOUD_SKILL.map(({ name, description, proficiency, icon }) => {
           return (
             <article css={skillContentWrapper}>
               {icon}

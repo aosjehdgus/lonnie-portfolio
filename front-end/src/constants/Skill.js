@@ -15,7 +15,7 @@ import {
 } from 'react-icons/si';
 import { DiNodejs } from 'react-icons/di';
 
-export const FRONT_CONFIG = [
+export const FRONT_SKILL = [
   {
     name: 'React',
     description: 'React 재밌다',
@@ -48,7 +48,7 @@ export const FRONT_CONFIG = [
   },
 ];
 
-export const BACK_CONFIG = [
+export const BACK_SKILL = [
   {
     name: 'Node.js',
     description: 'Node.js 재밌다',
@@ -80,7 +80,7 @@ export const BACK_CONFIG = [
     icon: <SiPostman />,
   },
 ];
-export const CLOUD_CONFIG = [
+export const CLOUD_SKILL = [
   {
     name: 'AWS',
     description: 'AWS 재밌다',
