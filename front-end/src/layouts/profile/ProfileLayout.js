@@ -1,6 +1,16 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/react';
+import { css, jsx, keyframes } from '@emotion/react';
 import PropTypes from 'prop-types';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px),
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const tawnyOrange = 'rgb(211, 128, 111)';
 
@@ -10,6 +20,9 @@ const profileContainer = css`
   align-items: center;
   height: calc(100vh - 140px);
   padding: 1rem;
+  div {
+    animation: ${fadeIn} 1s;
+  }
 `;
 
 const profileContentTitle = css`
