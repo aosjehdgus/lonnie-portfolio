@@ -24,6 +24,7 @@ const contentWrapper = css`
   background: #f8f9fa;
   text-decoration: none;
   width: 70%;
+  height: 100%;
   margin: 1rem;
   &:hover {
     transform: translateY(-20px);
