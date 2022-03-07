@@ -1,115 +1,96 @@
 import React from 'react';
-import { FaReact, FaGitAlt, FaSourcetree, FaGithub } from 'react-icons/fa';
+import ReactLogo from '../../asset/react.svg';
+import ReduxLogo from '../../asset/redux.svg';
+import ReduxSagaLogo from '../../asset/redux-saga.svg';
+import WebpackLogo from '../../asset/webpack.svg';
+import NestJsLogo from '../../asset/nestjs.svg';
+import PostmanLogo from '../../asset/postman.svg';
+import AWSLogo from '../../asset/aws.svg';
+import BitbucketLogo from '../../asset/bitbucket.svg';
+import GitLogo from '../../asset/git.svg';
+import GithubLogo from '../../asset/github.svg';
+import MongoDBLogo from '../../asset/mongodb.svg';
+import NodeJsLogo from '../../asset/nodejs.svg';
 
-import {
-  SiRedux,
-  SiReduxsaga,
-  SiWebpack,
-  SiBabel,
-  SiMongodb,
-  SiNestjs,
-  SiAmazonaws,
-  SiSwagger,
-  SiPostman,
-  SiBitbucket,
-} from 'react-icons/si';
-import { DiNodejs } from 'react-icons/di';
-
-export const FRONT_SKILL = [
+const FRONT_SKILL = [
   {
     name: 'React',
-    description: 'React 재밌다',
-    proficiency: 82,
-    icon: <FaReact />,
+    description: '',
+    proficiency: 72,
+    icon: <img alt="react" src={ReactLogo} />,
   },
   {
     name: 'Redux',
-    description: 'Redux 재밌다',
-    proficiency: 22,
-    icon: <SiRedux />,
+    description: '',
+    proficiency: 70,
+    icon: <img alt="react" src={ReduxLogo} />,
   },
   {
     name: 'Redux-saga',
-    description: 'Redux-saga 재밌다',
-    proficiency: 32,
-    icon: <SiReduxsaga />,
+    description: '',
+    proficiency: 67,
+    icon: <img alt="react" src={ReduxSagaLogo} />,
   },
   {
     name: 'Webpack',
-    description: 'Webpack 재밌다',
-    proficiency: 32,
-    icon: <SiWebpack />,
-  },
-  {
-    name: 'Babel',
-    description: 'Babel 재밌다',
-    proficiency: 32,
-    icon: <SiBabel />,
+    description: '',
+    proficiency: 50,
+    icon: <img alt="react" src={WebpackLogo} />,
   },
 ];
 
-export const BACK_SKILL = [
+const BACK_SKILL = [
   {
     name: 'Node.js',
-    description: 'Node.js 재밌다',
-    proficiency: 32,
-    icon: <DiNodejs />,
+    description: '',
+    proficiency: 51,
+    icon: <img alt="react" src={NodeJsLogo} />,
   },
   {
     name: 'MongoDB',
-    description: 'MongoDB 재밌다',
-    proficiency: 82,
-    icon: <SiMongodb />,
+    description: '',
+    proficiency: 53,
+    icon: <img alt="react" src={MongoDBLogo} />,
   },
   {
     name: 'Nest.js',
-    description: 'Nest.js 재밌다',
-    proficiency: 22,
-    icon: <SiNestjs />,
-  },
-  {
-    name: 'Swagger',
-    description: 'Swagger 재밌다',
-    proficiency: 22,
-    icon: <SiSwagger />,
+    description: '',
+    proficiency: 12,
+    icon: <img alt="react" src={NestJsLogo} />,
   },
   {
     name: 'Postman',
     description: 'Postman 재밌다',
-    proficiency: 32,
-    icon: <SiPostman />,
+    proficiency: 62,
+    icon: <img alt="react" src={PostmanLogo} />,
   },
 ];
-export const CLOUD_SKILL = [
+const CLOUD_SKILL = [
   {
     name: 'AWS',
     description: 'AWS 재밌다',
-    proficiency: 32,
-    icon: <SiAmazonaws />,
+    proficiency: 51,
+    icon: <img alt="react" src={AWSLogo} />,
   },
-
   {
     name: 'Git',
     description: 'Git 재밌다',
     proficiency: 52,
-    icon: <FaGitAlt />,
+    icon: <img alt="react" src={GitLogo} />,
   },
   {
     name: 'Github',
     description: 'Github 재밌다',
-    proficiency: 32,
-    icon: <FaGithub />,
+    proficiency: 53,
+    icon: <img alt="react" src={GithubLogo} />,
   },
   {
     name: 'Bitbucket',
     description: 'Bitbucket 재밌다',
-    proficiency: 32,
-    icon: <SiBitbucket />,
-  },
-  {
-    name: 'Sourcetree',
-    description: 'Sourcetree 재밌다',
-    proficiency: 12,
-    icon: <FaSourcetree />,
+    proficiency: 54,
+    icon: <img alt="react" src={BitbucketLogo} />,
   },
 ];
+
+export const SKILL = [FRONT_SKILL, BACK_SKILL, CLOUD_SKILL];
+export default SKILL;
