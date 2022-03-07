@@ -89,7 +89,7 @@ const CareerContent = () => {
             <article>
               {contents.map(({ period, content }) => {
                 return (
-                  <div>
+                  <div key={content}>
                     <span>{period}</span>
                     <span>{content}</span>
                   </div>
