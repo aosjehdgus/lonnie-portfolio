@@ -22,7 +22,7 @@ const aboutContentContainer = css`
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
-  background: rgba(255, 255, 255, 0.3);
+  background: #f8f9fa;
   header {
     padding: 0.5rem;
     h2 {
