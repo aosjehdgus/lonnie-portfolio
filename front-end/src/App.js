@@ -11,7 +11,7 @@ import Profile from './pages/Profile';
 import Contact from './pages/Contact';
 
 const appContainer = prop => css`
-  padding-top: 140px;
+  padding-top: 120px;
   position: relative;
   z-index: 0;
   ${prop === 'home'
@@ -23,10 +23,10 @@ const appContainer = prop => css`
       right: 0;
       bottom: 0;
       left: 0;
-      background-image: url(${waterColorImg});
+      background: #f8f9fa;
       background-size: cover;
       background-position: center center;
-      opacity: 0.25;}`}
+      opacity: 0.5;}`}
 `;
 
 const App = () => {
