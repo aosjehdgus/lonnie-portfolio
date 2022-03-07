@@ -49,6 +49,10 @@ module.exports = {
         type: 'asset/resource',
       },
       {
+        test: /\.svg/,
+        type: 'asset/resource',
+      },
+      {
         test: /\.txt/,
         type: 'asset/source',
       },
