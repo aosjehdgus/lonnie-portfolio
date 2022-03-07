@@ -14,7 +14,7 @@ const skillContentContainer = css`
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
-  background: rgba(255, 255, 255, 0.3);
+  background: #f8f9fa;
   overflow: scroll;
   section {
     display: flex;
@@ -65,7 +65,7 @@ const SkillContent = () => {
       <section>
         {FRONT_SKILL.map(({ name, description, proficiency, icon }) => {
           return (
-            <article css={skillContentWrapper}>
+            <article css={skillContentWrapper} key={name}>
               {icon}
               <div>
                 <h3>{name}</h3>
@@ -81,7 +81,7 @@ const SkillContent = () => {
       <section>
         {BACK_SKILL.map(({ name, description, proficiency, icon }) => {
           return (
-            <article css={skillContentWrapper}>
+            <article css={skillContentWrapper} key={name}>
               {icon}
               <div>
                 <h3>{name}</h3>
@@ -97,7 +97,7 @@ const SkillContent = () => {
       <section>
         {CLOUD_SKILL.map(({ name, description, proficiency, icon }) => {
           return (
-            <article css={skillContentWrapper}>
+            <article css={skillContentWrapper} key={name}>
               {icon}
               <div>
                 <h3>{name}</h3>
