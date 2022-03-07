@@ -6,10 +6,10 @@ import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const navListItem = prop => css`
-  padding: 0.5rem;
-  margin: 1rem;
-  cursor: pointer;
   a {
+    cursor: pointer;
+    margin: 1rem;
+    padding: 0.5rem;
     color: ${prop === true
       ? 'rgba(255, 255, 255, 1)'
       : 'rgba(255, 255, 255, 0.8)'};
