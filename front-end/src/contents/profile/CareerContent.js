@@ -36,9 +36,6 @@ const contentWrapper = prop => css`
       margin-left: 1rem;
       font-weight: 700;
     }
-    img {
-      width: 2.5rem;
-    }
   }
   span {
     font-size: 0.9rem;

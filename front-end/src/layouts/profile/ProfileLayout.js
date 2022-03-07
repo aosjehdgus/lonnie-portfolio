@@ -46,7 +46,7 @@ const profileContentTitle = prop => css`
     : prop === 'Archive'
     ? '#feab83'
     : prop === 'Skill'
-    ? '#5497aa'
+    ? '#03c75a'
     : prop === 'Career'
     ? '#639ad3'
     : prop === 'Project'
