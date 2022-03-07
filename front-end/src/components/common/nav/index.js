@@ -17,7 +17,7 @@ const horizontalNavWrapper = css`
   align-items: center;
   padding: 5px 0 15px 10px;
   margin-bottom: 20px;
-  background: ${cornSilk};
+  background: #001b54;
   z-index: 1;
 `;
 
