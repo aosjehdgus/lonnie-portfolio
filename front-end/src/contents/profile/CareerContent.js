@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import React from 'react';
 import CAREER from '../../constants/Career';
 import useProfile from '../../swr/useProfile';
 import Spinner from '../../components/common/Spinner';
@@ -15,7 +14,7 @@ const careerContentContainer = css`
   position: relative;
 `;
 
-const contentWrapper = css`
+const contentWrapper = prop => css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,14 +25,6 @@ const contentWrapper = css`
   width: 70%;
   height: 100%;
   margin: 1rem;
-  &:hover {
-    transform: translateY(-20px);
-    article {
-      p {
-        text-decoration: underline;
-      }
-    }
-  }
   header {
     display: flex;
     justify-content: center;
@@ -49,32 +40,36 @@ const contentWrapper = css`
       width: 2.5rem;
     }
   }
+  span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    color: rgba(0, 0, 0, 0.7);
+  }
   article {
     display: flex;
     flex-direction: column;
     flex-grow: 3;
     padding: 1rem;
-    span {
-      font-size: 0.95rem;
-      color: rgba(0, 0, 0, 0.7);
-      padding: 0.5rem;
-      font-weight: 500;
-    }
+    height: 100%;
+    justify-content: ${prop !== 'Job' ? 'space-between' : 'flex-start'};
+
     div {
-      margin-top: 1rem;
       display: flex;
       justify-content: space-between;
       span {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         padding: 0.5rem;
         color: rgba(0, 0, 0, 0.7);
+        overflow: hidden;
       }
     }
   }
 `;
 
 const CareerContent = () => {
-  const { profile, isLoading } = useProfile();
+  const { isLoading } = useProfile();
 
   return isLoading ? (
     <Spinner />
@@ -85,7 +80,7 @@ const CareerContent = () => {
           <a
             target="_blank"
             href={`https://${link}`}
-            css={contentWrapper}
+            css={contentWrapper(title)}
             rel="noreferrer"
             key={title}
           >
@@ -93,8 +88,8 @@ const CareerContent = () => {
               {icon}
               <h3>{title}</h3>
             </header>
+            <span>{description}</span>
             <article>
-              <span>{description}</span>
               {contents.map(({ period, content }) => {
                 return (
                   <div>
