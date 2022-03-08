@@ -11,6 +11,8 @@ import GitLogo from '../../asset/git.svg';
 import GithubLogo from '../../asset/github.svg';
 import MongoDBLogo from '../../asset/mongodb.svg';
 import NodeJsLogo from '../../asset/nodejs.svg';
+import SourceTreeLogo from '../../asset/sourcetree.svg';
+import BabelLogo from '../../asset/babel.svg';
 
 const FRONT_SKILL = [
   {
@@ -36,6 +38,12 @@ const FRONT_SKILL = [
     description: '',
     proficiency: 50,
     icon: <img alt="react" src={WebpackLogo} />,
+  },
+  {
+    name: 'Babel',
+    description: '',
+    proficiency: 43,
+    icon: <img alt="babel" src={BabelLogo} />,
   },
 ];
 
@@ -90,7 +98,13 @@ const CLOUD_SKILL = [
     proficiency: 54,
     icon: <img alt="react" src={BitbucketLogo} />,
   },
+  {
+    name: 'Sourcetree',
+    description: 'Bitbucket 재밌다',
+    proficiency: 52,
+    icon: <img alt="sourcetree" src={SourceTreeLogo} />,
+  },
 ];
 
-export const SKILL = [FRONT_SKILL, BACK_SKILL, CLOUD_SKILL];
+export const SKILL = [...FRONT_SKILL, ...BACK_SKILL, ...CLOUD_SKILL];
 export default SKILL;
