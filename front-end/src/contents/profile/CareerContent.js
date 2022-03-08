@@ -3,12 +3,12 @@ import { css, jsx } from '@emotion/react';
 import CAREER from '../../constants/Career';
 import useProfile from '../../swr/useProfile';
 import Spinner from '../../components/common/Spinner';
+import { mq } from '../../constants/MediaQuery';
 
 const careerContentContainer = css`
-  display: flex;
+  display: block;
   justify-content: space-around;
-  width: 70%;
-  height: calc(100% - 11rem);
+  height: calc(100% - 5rem);
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
@@ -22,8 +22,7 @@ const contentWrapper = prop => css`
   border-radius: 12px;
   background: #f8f9fa;
   text-decoration: none;
-  width: 70%;
-  height: 100%;
+
   margin: 1rem;
   header {
     display: flex;
@@ -36,30 +35,66 @@ const contentWrapper = prop => css`
       margin-left: 1rem;
       font-weight: 700;
     }
+    img {
+      width: 10rem;
+    }
   }
-  span {
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 1rem;
-    padding-left: 1.5rem;
-    color: rgba(0, 0, 0, 0.7);
+  div {
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.5);
+      margin-right: 1rem;
+      margin-bottom: ${prop === 'summary' ? '0' : '1rem'};
+    }
+    span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1.3rem;
+    }
   }
+
   article {
     display: flex;
-    flex-direction: column;
+    flex-direction: ${prop === 'summary' ? 'column' : 'row'};
     flex-grow: 3;
-    padding: 1rem;
+    padding: 0.5rem;
     height: 100%;
-    justify-content: ${prop !== 'Job' ? 'space-between' : 'flex-start'};
+    justify-content: space-between;
 
     div {
       display: flex;
       justify-content: space-between;
+      align-items: ${prop === 'summary' ? 'center' : 'flex-start'};
+      flex-direction: ${prop === 'summary' ? 'row' : 'column'};
+      padding: 0.5rem;
+      border: 0;
+      p {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.5);
+        border: 0;
+      }
       span {
-        font-size: 0.8rem;
-        padding: 0.5rem;
-        color: rgba(0, 0, 0, 0.7);
-        overflow: hidden;
+        font-size: 0.7rem;
+        color: rgba(0, 0, 0, 0.8);
+        border: 0;
+      }
+      ul {
+        height: 100%;
+        list-style-type: square;
+        margin-left: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        li {
+          font-size: 0.7rem;
+          line-height: 2rem;
+          color: rgba(0, 0, 0, 0.7);
+        }
       }
     }
   }
@@ -71,32 +106,49 @@ const CareerContent = () => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div css={careerContentContainer}>
-      {CAREER.map(({ icon, title, link, description, contents }) => {
+    <div
+      css={css`
+        ${careerContentContainer}
+        ${mq[4]} {
+          display: flex;
+          width: 70%;
+        }
+      `}
+    >
+      {CAREER.map(({ key, working, icon, title, description, contents }) => {
         return (
-          <a
-            target="_blank"
-            href={`https://${link}`}
-            css={contentWrapper(title)}
-            rel="noreferrer"
-            key={title}
-          >
+          <section css={contentWrapper(key)} key={title}>
             <header>
               {icon}
               <h3>{title}</h3>
             </header>
-            <span>{description}</span>
+            <div>
+              <p>{working}</p>
+              <span>{description}</span>
+            </div>
             <article>
-              {contents.map(({ period, content }) => {
-                return (
+              {contents.map(({ period, project, content, developments }) => {
+                return key === 'summary' ? (
                   <div key={content}>
-                    <span>{period}</span>
+                    <p>{period}</p>
                     <span>{content}</span>
+                  </div>
+                ) : (
+                  <div key={project}>
+                    <div>
+                      <p>{period}</p>
+                      <span>{project}</span>
+                    </div>
+                    <ul>
+                      {developments.map(development => {
+                        return <li>{development}</li>;
+                      })}
+                    </ul>
                   </div>
                 );
               })}
             </article>
-          </a>
+          </section>
         );
       })}
     </div>

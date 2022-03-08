@@ -4,11 +4,12 @@ import { css, jsx } from '@emotion/react';
 import ARCHIVE from '../../constants/Archive';
 import useProfile from '../../swr/useProfile';
 import Spinner from '../../components/common/Spinner';
+import { mq } from '../../constants/MediaQuery';
 
 const archiveContentContainer = css`
-  display: flex;
+  display: block;
   justify-content: space-around;
-  width: 70%;
+  width: 100%;
   height: calc(100% - 11rem);
   border-radius: 1rem;
   padding: 0.5rem;
@@ -23,8 +24,6 @@ const contentWrapper = css`
   border-radius: 12px;
   background: #f8f9fa;
   text-decoration: none;
-  width: 70%;
-  height: 100%;
   margin: 1rem;
   &:hover {
     transform: translateY(-20px);
@@ -84,13 +83,28 @@ const ArchiveContent = () => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div css={archiveContentContainer}>
+    <div
+      css={css`
+        ${archiveContentContainer}
+        ${mq[4]} {
+          display: flex;
+          width: 70%;
+        }
+      `}
+    >
       {ARCHIVE.map(({ icon, title, link, description, contents }) => {
         return (
           <a
             target="_blank"
             href={`https://${link}`}
-            css={contentWrapper}
+            css={css`
+              ${contentWrapper}
+              ${mq[4]} {
+                display: block;
+                width: 70%;
+                height: 100%;
+              }
+            `}
             rel="noreferrer"
             key={title}
           >

@@ -4,22 +4,24 @@ import { css, jsx } from '@emotion/react';
 import { SKILL } from '../../constants/Skill';
 import useProfile from '../../swr/useProfile';
 import Spinner from '../../components/common/Spinner';
+import { mq } from '../../constants/MediaQuery';
 
 const skillContentContainer = css`
   display: flex;
   justify-content: space-around;
-  width: 70%;
-  height: 100%;
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
   background: #f8f9fa;
   overflow: scroll;
-  section {
+  width: 100%;
+  height: 100%;
+  article {
     display: flex;
-    flex-direction: column;
-    height: 100%;
+    padding: 0.5rem;
+    width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 `;
 
@@ -28,8 +30,9 @@ const skillContentWrapper = css`
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+  width: 160px;
   img {
-    width: 2rem;
+    width: 1.5rem;
   }
   div {
     display: flex;
@@ -40,7 +43,7 @@ const skillContentWrapper = css`
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     h3 {
       color: rgba(0, 0, 0, 0.7);
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin-bottom: 0.4rem;
     }
     progress[value]::-webkit-progress-bar {
@@ -54,6 +57,7 @@ const skillContentWrapper = css`
       position: relative;
       display: flex;
       align-items: center;
+      width: 100%;
     }
     progress[value]::-webkit-progress-value {
       background-image: linear-gradient(to left, #2ecc71, #3498db);
@@ -72,27 +76,37 @@ const SkillContent = () => {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div css={skillContentContainer}>
-      {SKILL.map((skills, index) => {
-        return (
-          <section key={`${skills + index}`}>
-            {skills.map(({ name, proficiency, icon }) => {
-              return (
-                <article css={skillContentWrapper} key={name}>
-                  {icon}
-                  <div>
-                    <h3>{name}</h3>
-                    <progress id="proficiency" value={proficiency} max="100" />
-                    <label htmlFor="proficiency">
-                      숙련도 : {proficiency} %
-                    </label>
-                  </div>
-                </article>
-              );
-            })}
-          </section>
-        );
-      })}
+    <div
+      css={css`
+        ${skillContentContainer}
+        ${mq[4]} {
+          width: 70%;
+          height: 100%;
+          img {
+            width: 2rem;
+          }
+          h3 {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+          }
+        }
+      `}
+    >
+      <article>
+        {SKILL.map(({ icon, name, proficiency }) => {
+          return (
+            <section css={skillContentWrapper} key={name}>
+              {icon}
+              <div>
+                <h3>{name}</h3>
+                <progress id="proficiency" value={proficiency} max="100" />
+                <label htmlFor="proficiency">숙련도 : {proficiency} %</label>
+              </div>
+            </section>
+          );
+        })}
+      </article>
     </div>
   );
 };
