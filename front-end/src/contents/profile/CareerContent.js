@@ -8,7 +8,6 @@ import { mq } from '../../constants/MediaQuery';
 const careerContentContainer = css`
   display: block;
   justify-content: space-around;
-  height: calc(100% - 5rem);
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
@@ -112,6 +111,7 @@ const CareerContent = () => {
         ${mq[4]} {
           display: flex;
           width: 70%;
+          height: 100%;
         }
       `}
     >

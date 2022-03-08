@@ -13,9 +13,7 @@ const skillContentContainer = css`
   padding: 0.5rem;
   position: relative;
   background: #f8f9fa;
-  overflow: scroll;
-  width: 100%;
-  height: 100%;
+  width: 50%;
   article {
     display: flex;
     padding: 0.5rem;
@@ -63,7 +61,7 @@ const skillContentWrapper = css`
       background-image: linear-gradient(to left, #2ecc71, #3498db);
     }
     label {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       margin-top: 0.1rem;
       color: rgba(0, 0, 0, 0.7);
     }
@@ -80,8 +78,6 @@ const SkillContent = () => {
       css={css`
         ${skillContentContainer}
         ${mq[4]} {
-          width: 70%;
-          height: 100%;
           img {
             width: 2rem;
           }
@@ -89,6 +85,9 @@ const SkillContent = () => {
             color: rgba(0, 0, 0, 0.7);
             font-size: 1.2rem;
             margin-bottom: 0.4rem;
+          }
+          label {
+            font-size: 0.9rem;
           }
         }
       `}

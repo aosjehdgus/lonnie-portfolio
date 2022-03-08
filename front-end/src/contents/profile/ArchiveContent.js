@@ -10,7 +10,6 @@ const archiveContentContainer = css`
   display: block;
   justify-content: space-around;
   width: 100%;
-  height: calc(100% - 11rem);
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
@@ -20,7 +19,8 @@ const contentWrapper = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.5rem;
+  padding: 1rem;
+  padding-left: 1.5rem;
   border-radius: 12px;
   background: #f8f9fa;
   text-decoration: none;
@@ -66,7 +66,7 @@ const contentWrapper = css`
       font-weight: 500;
     }
     ul {
-      list-style-type: circle;
+      list-style-type: disc;
       margin-top: 1rem;
       li {
         font-size: 0.9rem;
@@ -102,7 +102,6 @@ const ArchiveContent = () => {
               ${mq[4]} {
                 display: block;
                 width: 70%;
-                height: 100%;
               }
             `}
             rel="noreferrer"
