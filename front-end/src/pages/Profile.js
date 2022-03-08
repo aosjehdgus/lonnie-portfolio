@@ -20,7 +20,7 @@ const Profile = () => {
   return (
     <>
       {profileConfig.map(({ title, content }) => {
-        return <ProfileLayout title={title} content={content} />;
+        return <ProfileLayout key={title} title={title} content={content} />;
       })}
     </>
   );

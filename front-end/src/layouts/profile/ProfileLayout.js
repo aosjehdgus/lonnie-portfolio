@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-nested-ternary */
 /** @jsx jsx */
 import { css, jsx, keyframes } from '@emotion/react';
-import PropTypes from 'prop-types';
 
 const fadeIn = keyframes`
   from {
@@ -64,11 +64,6 @@ const ProfileLayout = ({ title, content }) => {
       {content}
     </div>
   );
-};
-
-ProfileLayout.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.shape.isRequired,
 };
 
 export default ProfileLayout;
