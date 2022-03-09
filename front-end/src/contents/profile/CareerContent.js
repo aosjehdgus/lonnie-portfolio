@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import CAREER from '../../constants/Career';
-import useProfile from '../../swr/useProfile';
-import Spinner from '../../components/common/Spinner';
 import { mq } from '../../constants/MediaQuery';
 
 const careerContentContainer = css`
@@ -100,11 +98,7 @@ const contentWrapper = prop => css`
 `;
 
 const CareerContent = () => {
-  const { isLoading } = useProfile();
-
-  return isLoading ? (
-    <Spinner />
-  ) : (
+  return (
     <div
       css={css`
         ${careerContentContainer}
@@ -117,7 +111,7 @@ const CareerContent = () => {
     >
       {CAREER.map(({ key, working, icon, title, description, contents }) => {
         return (
-          <section css={contentWrapper(key)} key={title}>
+          <section css={contentWrapper(key)} key={key}>
             <header>
               {icon}
               <h3>{title}</h3>
@@ -141,7 +135,7 @@ const CareerContent = () => {
                     </div>
                     <ul>
                       {developments.map(development => {
-                        return <li>{development}</li>;
+                        return <li key={development}>{development}</li>;
                       })}
                     </ul>
                   </div>

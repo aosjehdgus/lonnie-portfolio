@@ -2,8 +2,6 @@
 import { css, jsx } from '@emotion/react';
 
 import ARCHIVE from '../../constants/Archive';
-import useProfile from '../../swr/useProfile';
-import Spinner from '../../components/common/Spinner';
 import { mq } from '../../constants/MediaQuery';
 
 const archiveContentContainer = css`
@@ -78,11 +76,7 @@ const contentWrapper = css`
 `;
 
 const ArchiveContent = () => {
-  const { profile, isLoading } = useProfile();
-
-  return isLoading ? (
-    <Spinner />
-  ) : (
+  return (
     <div
       css={css`
         ${archiveContentContainer}

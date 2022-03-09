@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import moment from 'moment';
-import useProfile from '../../swr/useProfile';
-import Spinner from '../../components/common/Spinner';
+
 import ABOUT from '../../constants/About';
 
 const aboutContentContainer = css`
@@ -73,14 +72,11 @@ const contentWrapper = css`
 `;
 
 const AboutContent = () => {
-  const { profile, isLoading } = useProfile();
   // const { name, birth, university, email, github, blog } = profile || {};
 
   // const birthday = moment(birth).format('YYYY.MM.DD');
 
-  return isLoading ? (
-    <Spinner />
-  ) : (
+  return (
     <div css={aboutContentContainer}>
       <header>
         <h2>긍정적 재료로 소통하는 긍정 개발자</h2>

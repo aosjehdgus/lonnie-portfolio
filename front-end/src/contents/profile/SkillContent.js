@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-
 import { SKILL } from '../../constants/Skill';
-import useProfile from '../../swr/useProfile';
-import Spinner from '../../components/common/Spinner';
 import { mq } from '../../constants/MediaQuery';
 
 const skillContentContainer = css`
@@ -69,11 +66,7 @@ const skillContentWrapper = css`
 `;
 
 const SkillContent = () => {
-  const { isLoading } = useProfile();
-
-  return isLoading ? (
-    <Spinner />
-  ) : (
+  return (
     <div
       css={css`
         ${skillContentContainer}
