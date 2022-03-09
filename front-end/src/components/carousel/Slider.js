@@ -1,13 +1,8 @@
+/* eslint-disable react/prop-types */
 /** @jsx jsx */
-
 import { css, jsx } from '@emotion/react';
 import { useState, useEffect, useRef } from 'react';
 import Slide from './Slide';
-import ReactLogo from '../../../asset/react.svg';
-import ReduxLogo from '../../../asset/redux.svg';
-import ReduxSagaLogo from '../../../asset/redux-saga.svg';
-import WebpackLogo from '../../../asset/webpack.svg';
-import NestJsLogo from '../../../asset/nestjs.svg';
 
 const Container = css`
   width: 60%;
@@ -17,7 +12,13 @@ const Container = css`
 
 const SliderContainer = css`
   width: 100%;
+  display: -webkit-box;
+`;
+
+const SliderButtonContainer = css`
   display: flex;
+  justify-content: space-around;
+  padding: 1rem;
 `;
 
 const SliderButton = css`
@@ -33,9 +34,9 @@ const SliderButton = css`
   }
 `;
 
-const TOTAL_SLIDE = 5;
+const TOTAL_SLIDE = 4;
 
-const Slider = () => {
+const Slider = ({ project }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
 
@@ -62,20 +63,43 @@ const Slider = () => {
 
   return (
     <div css={Container}>
-      {currentSlide}
       <div css={SliderContainer} ref={slideRef}>
-        <Slide img={ReactLogo} />
-        <Slide img={ReduxLogo} />
-        <Slide img={ReduxSagaLogo} />
-        <Slide img={WebpackLogo} />
-        <Slide img={NestJsLogo} />
+        {project.map(
+          ({
+            key,
+            title,
+            icon,
+            image,
+            description,
+            period,
+            development,
+            func,
+            github,
+          }) => {
+            return (
+              <Slide
+                key={key}
+                title={title}
+                icon={icon}
+                image={image}
+                description={description}
+                period={period}
+                development={development}
+                func={func}
+                github={github}
+              />
+            );
+          },
+        )}
       </div>
-      <button type="button" onClick={prevSlide} css={SliderButton}>
-        Previous Slide
-      </button>
-      <button type="button" onClick={nextSlide} css={SliderButton}>
-        Next Slide
-      </button>
+      <div css={SliderButtonContainer}>
+        <button type="button" onClick={prevSlide} css={SliderButton}>
+          Prev
+        </button>
+        <button type="button" onClick={nextSlide} css={SliderButton}>
+          Next
+        </button>
+      </div>
     </div>
   );
 };
