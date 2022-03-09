@@ -1,5 +1,5 @@
 import React from 'react';
-import { FcSearch, FcBriefcase } from 'react-icons/fc';
+import { FcBriefcase } from 'react-icons/fc';
 import media from '../../asset/media.jpg';
 
 const CAREER = [
@@ -56,55 +56,6 @@ const CAREER = [
       },
     ],
   },
-  // {
-  //   icon: <FcBriefcase size={50} />,
-  //   title: 'Project',
-  //   subtitle: '제가 진행한 프로젝트를 간략하게 요약하였습니다.',
-  //   contents: [
-  //     {
-  //       period: '2021.11 - 2022.04',
-  //       role: '연구원 (프론트 엔드 개발)',
-  //       project: '말뭉치 언어의 사회적 인식 조사 분류 사업',
-  //       description: '',
-  //     },
-  //     {
-  //       period: '2021.05 - 2021.09',
-  //       role: '개발 인력 (프론트 엔드 개발)',
-  //       project: '비윤리적 표현 말뭉치 연구 분석 및 시범 구축 사업',
-  //       description: '',
-  //     },
-  //     {
-  //       period: '2021.03',
-  //       project: '고객 관리 프로덕트 개발',
-  //       description:
-  //         'React, NodeJS, MySQL을 활용하여 추가, 삭제, 검색으로 고객을 관리 할 수 있는 페이지 개발하였습니다.',
-  //     },
-  //     {
-  //       period: '2021.03',
-  //       project: '로그인 프로덕트 개발',
-  //       description:
-  //         'React, Mobx, NodeJS, MySQL을 활용하여 프론트부터 백엔드까지 간단한 로그인 프로덕트를 개발하였습니다.',
-  //     },
-  //     {
-  //       period: '2020.12',
-  //       project: "dongle's portfolio",
-  //       description:
-  //         'dongle은 저의 닉네임이고 저의 초기 포트폴리오 내용을 담고 있습니다. HTML, CSS, JS를 통해 개발하였습니다.',
-  //     },
-  //     {
-  //       period: '2020.10.15 - 2020.11.15',
-  //       project: 'AD add 프로젝트',
-  //       description:
-  //         '얼굴 인식을 통해 추출한 데이터를 기반으로 광고를 추천하는 서비스 입니다. 120만장의 사진 데이터 라벨링 작업, Dlib, OpenCV를 이용한 데이터 전처리, EfficientnetB4를 통한 모델링 및 학습을 진행하였습니다.',
-  //     },
-  //     {
-  //       period: '2020.06',
-  //       project: '맛.zip 프로젝트',
-  //       description:
-  //         '요리의 레시피를 전달하고, 냉장고 관리, 장보기 메모 기능을 담고 있는 서비스 입니다. 냉장고 관리 페이지의 HTML, CSS, JS를 담당하였습니다.',
-  //     },
-  //   ],
-  // },
 ];
 
 export default CAREER;
