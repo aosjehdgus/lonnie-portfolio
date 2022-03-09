@@ -115,10 +115,12 @@ const Slide = ({
             <span>Back : </span> {back.map(data => data)}
           </li>
         ) : null}
-        <li>
-          <span>Database :</span>
-          {database}
-        </li>
+        {database.length !== 0 ? (
+          <li>
+            <span>Database : </span>
+            {database}
+          </li>
+        ) : null}
         {build.length !== 0 ? (
           <li>
             <span>Build : </span> {build.map(data => data)}
