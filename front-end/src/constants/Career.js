@@ -9,16 +9,16 @@ const CAREER = [
     title: 'Summary',
     description: `학부 시절부터 지금까지의 활동을 담고 있습니다.`,
     contents: [
-      { period: '2013', content: '2대 학생회 과대표' },
-      { period: '2018', content: '7대 학생회 정학생회장' },
-      { period: '2019', content: '8대 학생회 과대표' },
+      { period: '2013.01 - 2013.12', content: '2대 학생회 과대표' },
+      { period: '2018.01 - 2018.12', content: '7대 학생회 정학생회장' },
+      { period: '2019.01 - 2019.12', content: '8대 학생회 과대표' },
       {
         period: '2020.05 - 2020.11',
         content: '한국품질재단 AI 개발자 양성 과정 수료',
       },
-      { period: '2021.04', content: '긱웍스 에아이이 입사' },
+      { period: '2021.04 - 2021.11', content: '긱웍스 에아이이' },
       {
-        period: '2021.11',
+        period: '2021.11 - 재직중',
         content: '(주)미디어 코퍼스로 소속 이전',
       },
     ],

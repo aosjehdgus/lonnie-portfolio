@@ -55,7 +55,7 @@ const contentWrapper = prop => css`
     margin-left: 0.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     li {
       font-size: 0.7rem;
       line-height: 2rem;
