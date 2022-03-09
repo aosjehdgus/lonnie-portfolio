@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx, keyframes } from '@emotion/react';
+import { mq } from '../constants/MediaQuery';
 
 const white = 'rgb(255, 255, 255)';
 const deepTaupe = 'rgb(123, 102, 96)';
@@ -9,9 +10,6 @@ const tawnyOrange = 'rgb(211, 128, 111)';
 const veryPeri = 'rgb(102, 103, 171)';
 const cornSilk = 'rgb(237, 195, 115)';
 const paradisePink = 'rgb(228, 69, 94)';
-
-const breakpoints = [370, 576, 768, 992, 1200];
-const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
 const wrapperStyle = css`
   display: flex;

@@ -17,7 +17,6 @@ const profileContainer = prop => css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 120px);
   padding: 1rem;
   padding-top: 2rem;
   div {
