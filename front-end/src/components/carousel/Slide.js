@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
+import _ from 'lodash';
 import { css, jsx } from '@emotion/react';
 
 const contentWrapper = prop => css`
@@ -45,7 +46,7 @@ const contentWrapper = prop => css`
       font-size: 0.9rem;
       font-weight: 500;
       color: rgba(0, 0, 0, 0.7);
-      line-height: 1.3rem;
+      line-height: 1.5rem;
     }
   }
   ul {
@@ -57,12 +58,33 @@ const contentWrapper = prop => css`
     flex-direction: column;
     justify-content: space-around;
     li {
+      display: flex;
+      justify-content: space-between;
       font-size: 0.8rem;
       line-height: 2rem;
       color: rgba(0, 0, 0, 0.7);
       span {
+        text-transform: capitalize;
+      }
+      div {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0.1rem;
+        border: 0;
+        span {
+          font-size: 0.8rem;
+          color: rgba(0, 0, 0, 0.7);
+          maring-right: 0.1rem;
+          padding: 0.2rem;
+          text-transform: inherit;
+          border: 0;
+        }
+      }
+      #title {
         font-weight: 600;
         font-size: 0.9rem;
+        width: 150px;
       }
     }
   }
@@ -78,7 +100,6 @@ const Slide = ({
   func,
   github,
 }) => {
-  const { front, back, database, build, deploy } = development;
   return (
     <article css={contentWrapper}>
       <header>
@@ -94,44 +115,18 @@ const Slide = ({
       </div>
 
       <ul>
-        {github.length !== 0 ? (
-          <li>
-            <span>Github : </span>
-            {github}
-          </li>
-        ) : null}
-        {func.length !== 0 ? (
-          <li>
-            <span>기능 : </span> {func.map(data => data)}
-          </li>
-        ) : null}
-        {front.length !== 0 ? (
-          <li>
-            <span>Front : </span> {front.map(data => data)}
-          </li>
-        ) : null}
-        {back.length !== 0 ? (
-          <li>
-            <span>Back : </span> {back.map(data => data)}
-          </li>
-        ) : null}
-        {database.length !== 0 ? (
-          <li>
-            <span>Database : </span>
-            {database}
-          </li>
-        ) : null}
-        {build.length !== 0 ? (
-          <li>
-            <span>Build : </span> {build.map(data => data)}
-          </li>
-        ) : null}
-        {deploy.length !== 0 ? (
-          <li>
-            <span>Deploy : </span>
-            {deploy}
-          </li>
-        ) : null}
+        {_.map(development, (value, key) => {
+          return value.length !== 0 ? (
+            <li key={key}>
+              <span id="title">{key}</span>
+              <div>
+                <span>{`${value}`}</span>
+              </div>
+            </li>
+          ) : (
+            ''
+          );
+        })}
       </ul>
     </article>
   );

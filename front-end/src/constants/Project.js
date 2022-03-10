@@ -11,9 +11,34 @@ import DikeImage from '../../asset/dike-img.png';
 import NiklImage from '../../asset/nikl-img.jpg';
 import DongleImage from '../../asset/dongle-img.jpg';
 import MatImage from '../../asset/mat-img.jpg';
-import media from '../../asset/media.jpg';
 
 const PROJECT = [
+  {
+    key: 'lonnie',
+    title: 'Lonnie Portfolio Project',
+    icon: <FcFinePrint size={30} />,
+    image: <img alt="dike" src={DikeImage} />,
+    description: `현재 보고 게시는 포트폴리오 페이지입니다. Create React App을 사용하지 않고 직접 React 개발 환경을 구축한 프로젝트로, 
+    Webpack을 커스터 마이징 하며 작업하였습니다. Data Fetching은 무거운 Redux에서 벗어나 SWR로 진행해 보았습니다. 
+    스타일 라이브러리는 Emotion을 사용하며 css-in-js에 익숙해지려고 노력했습니다. 백엔드는 NestJS와 MongoDB로 구축하고, Vercel을 통해 배포를 진행하였습니다.
+    `,
+    period: '2021.02 - 2022.03',
+    development: {
+      github: '',
+      '주요 내용': [
+        '간단한 소개',
+        '저장 공간 공유',
+        '개발 스킬',
+        '활동 사항',
+        '프로젝트 소개',
+      ],
+      frontend: ['React', 'SWR', 'Emotion'],
+      backend: ['NodeJS', 'NestJS'],
+      database: 'MongoDB',
+      build: ['Webpack', 'Babel'],
+      deploy: 'Vercel',
+    },
+  },
   {
     key: 'dike',
     title: 'Dike Project',
@@ -24,8 +49,15 @@ const PROJECT = [
     `,
     period: '2021.11 - 2022.04',
     development: {
-      front: ['React', 'Redux-toolkit', 'Redux-saga'],
-      back: ['NodeJS', 'SailsJS'],
+      github: '',
+      func: [
+        '원하는 작업 번호로 이동',
+        '기준에 따른 평가',
+        '작업 패스',
+        '작업 진행률 확인',
+      ],
+      frontend: ['React', 'Redux-toolkit', 'Redux-saga', 'Material-UI'],
+      backend: ['NodeJS', 'SailsJS'],
       database: 'MongoDB',
       build: [],
       deploy: 'AWS CloudFront',

@@ -8,7 +8,6 @@ import { css, jsx, keyframes } from '@emotion/react';
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateY(50px),
   }
   to {
     opacity: 1;
@@ -22,7 +21,7 @@ const profileContainer = prop => css`
   padding: 1rem;
   padding-top: 2rem;
   div {
-    animation: ${fadeIn} 3s;
+    animation: ${fadeIn} 1.5s ease-in-out;
   }
   background: ${prop === 'About'
     ? '#e9ecef'
