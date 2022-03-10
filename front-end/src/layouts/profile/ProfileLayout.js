@@ -1,12 +1,14 @@
+/* eslint-disable consistent-return */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-nested-ternary */
 /** @jsx jsx */
+import React, { useState, useEffect, useRef } from 'react';
 import { css, jsx, keyframes } from '@emotion/react';
 
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateY(20px),
+    transform: translateY(50px),
   }
   to {
     opacity: 1;
@@ -20,7 +22,7 @@ const profileContainer = prop => css`
   padding: 1rem;
   padding-top: 2rem;
   div {
-    animation: ${fadeIn} 1s;
+    animation: ${fadeIn} 3s;
   }
   background: ${prop === 'About'
     ? '#e9ecef'
@@ -57,10 +59,33 @@ const profileContentTitle = prop => css`
 `;
 
 const ProfileLayout = ({ title, content }) => {
+  const [showElement, setShowElement] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    let mounted = true;
+    window.addEventListener('scroll', () => {
+      if (mounted) {
+        const scroll = scrollRef.current.getBoundingClientRect();
+        setShowElement(scroll.top <= 945);
+        setLoading(false);
+      }
+    });
+    return () => {
+      mounted = false;
+    };
+  }, [scrollRef.current]);
+
   return (
-    <div css={profileContainer(title)}>
-      <h1 css={profileContentTitle(title)}>{title}</h1>
-      {content}
+    <div css={profileContainer(title)} ref={scrollRef}>
+      {showElement && (
+        <>
+          <h1 css={profileContentTitle(title)}>{title}</h1>
+          {content}
+        </>
+      )}
     </div>
   );
 };
