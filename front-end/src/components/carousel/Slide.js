@@ -27,7 +27,7 @@ const contentWrapper = prop => css`
       color: rgba(0, 0, 0, 0.9);
     }
     img {
-      width: 25rem;
+      width: 60%;
     }
   }
 
@@ -42,7 +42,7 @@ const contentWrapper = prop => css`
       margin-bottom: ${prop === 'summary' ? '0' : '1rem'};
     }
     span {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: rgba(0, 0, 0, 0.7);
       line-height: 1.3rem;
@@ -57,12 +57,12 @@ const contentWrapper = prop => css`
     flex-direction: column;
     justify-content: space-around;
     li {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       line-height: 2rem;
       color: rgba(0, 0, 0, 0.7);
       span {
-        font-weight: 500;
-        font-size: 0.8rem;
+        font-weight: 600;
+        font-size: 0.9rem;
       }
     }
   }

@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import { useState, useEffect, useRef } from 'react';
+import { FcNext, FcPrevious } from 'react-icons/fc';
 import Slide from './Slide';
 
 const Container = css`
@@ -13,24 +14,25 @@ const Container = css`
 const SliderContainer = css`
   width: 100%;
   display: -webkit-box;
+  height: 60%;
 `;
 
 const SliderButtonContainer = css`
   display: flex;
+  height: fit-content;
   justify-content: space-around;
   padding: 1rem;
+  position: relative;
 `;
 
 const SliderButton = css`
   all: unset;
-  border: 1px solid coral;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5em 2em;
-  color: coral;
-  border-radius: 10px;
+  border-radius: 20px;
   &:hover {
     transition: all 0.3s ease-in-out;
-    background-color: coral;
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -94,10 +96,10 @@ const Slider = ({ project }) => {
       </div>
       <div css={SliderButtonContainer}>
         <button type="button" onClick={prevSlide} css={SliderButton}>
-          Prev
+          <FcPrevious />
         </button>
         <button type="button" onClick={nextSlide} css={SliderButton}>
-          Next
+          <FcNext />
         </button>
       </div>
     </div>

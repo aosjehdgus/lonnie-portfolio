@@ -10,7 +10,7 @@ const skillContentContainer = css`
   padding: 0.5rem;
   position: relative;
   background: #f8f9fa;
-  width: 50%;
+  width: 60%;
   article {
     display: flex;
     padding: 0.5rem;
