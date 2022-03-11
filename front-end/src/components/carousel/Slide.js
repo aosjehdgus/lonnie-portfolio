@@ -18,7 +18,6 @@ const contentWrapper = css`
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     div {
       display: flex;
       flex-direction: column;
@@ -42,7 +41,6 @@ const contentWrapper = css`
         width: 100%;
         height: auto;
       }
-
       p {
         font-size: 1.1rem;
         font-weight: 500;
@@ -65,6 +63,7 @@ const contentWrapper = css`
   ul {
     height: 100%;
     padding: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     list-style-type: square;
     margin-left: 0.5rem;
     display: flex;

@@ -20,16 +20,20 @@ const SliderContainer = css`
 const SliderButtonContainer = css`
   display: flex;
   height: fit-content;
-  justify-content: space-around;
-  padding: 1rem;
-  position: relative;
+  justify-content: space-between;
+  position: absolute;
+  top: 42%;
+  transform: translateY(50%);
+  z-index: 1;
+  width: 100%;
 `;
 
 const SliderButton = css`
   all: unset;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0.5em 2em;
+  padding: 0.5rem;
   border-radius: 20px;
+  position: relative;
+  cursor: pointer;
   &:hover {
     transition: all 0.3s ease-in-out;
     background-color: rgba(0, 0, 0, 0.1);
@@ -65,6 +69,14 @@ const Slider = ({ project }) => {
 
   return (
     <div css={Container}>
+      <div css={SliderButtonContainer}>
+        <button type="button" onClick={prevSlide} css={SliderButton}>
+          <FcPrevious />
+        </button>
+        <button type="button" onClick={nextSlide} css={SliderButton}>
+          <FcNext />
+        </button>
+      </div>
       <div css={SliderContainer} ref={slideRef}>
         {project.map(
           ({ key, title, icon, image, description, period, development }) => {
@@ -81,14 +93,6 @@ const Slider = ({ project }) => {
             );
           },
         )}
-      </div>
-      <div css={SliderButtonContainer}>
-        <button type="button" onClick={prevSlide} css={SliderButton}>
-          <FcPrevious />
-        </button>
-        <button type="button" onClick={nextSlide} css={SliderButton}>
-          <FcNext />
-        </button>
       </div>
     </div>
   );
