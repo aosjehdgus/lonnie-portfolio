@@ -2,8 +2,9 @@
 /** @jsx jsx */
 import _ from 'lodash';
 import { css, jsx } from '@emotion/react';
+import { mq } from '../../constants/MediaQuery';
 
-const contentWrapper = prop => css`
+const contentWrapper = css`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -16,39 +17,51 @@ const contentWrapper = prop => css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    h3 {
-      svg {
-        margin-right: 1rem;
-      }
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    div {
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
       padding: 1rem;
-      align-items: center;
-      font-size: 1.3rem;
-      color: rgba(0, 0, 0, 0.9);
-    }
-    img {
-      width: 60%;
+      h3 {
+        svg {
+          margin-right: 1rem;
+        }
+        display: flex;
+        padding: 1rem;
+        align-items: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: rgba(0, 0, 0, 0.7);
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      p {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.5);
+        margin-right: 1rem;
+        padding: 0.5rem;
+      }
+      span {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.7);
+        line-height: 1.6rem;
+        letter-spacing: 0.05rem;
+        padding: 0.5rem;
+        padding-top: 1rem;
+      }
     }
   }
 
-  div {
-    padding: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    p {
-      font-size: 1rem;
-      font-weight: 500;
-      color: rgba(0, 0, 0, 0.5);
-      margin-right: 1rem;
-      margin-bottom: ${prop === 'summary' ? '0' : '1rem'};
-    }
-    span {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: rgba(0, 0, 0, 0.7);
-      line-height: 1.5rem;
-    }
-  }
   ul {
     height: 100%;
     padding: 1rem;
@@ -72,47 +85,62 @@ const contentWrapper = prop => css`
         justify-content: flex-start;
         padding: 0.1rem;
         border: 0;
+
         span {
           font-size: 0.8rem;
           color: rgba(0, 0, 0, 0.7);
-          maring-right: 0.1rem;
           padding: 0.2rem;
           text-transform: inherit;
           border: 0;
+          letter-spacing: 0.05rem;
+        }
+        a {
+          color: #99ccff;
         }
       }
       #title {
         font-weight: 600;
         font-size: 0.9rem;
         width: 150px;
+        padding: 0.2rem;
       }
     }
   }
 `;
 
-const Slide = ({
-  title,
-  icon,
-  image,
-  description,
-  period,
-  development,
-  func,
-  github,
-}) => {
+const Slide = ({ title, icon, image, description, period, development }) => {
   return (
-    <article css={contentWrapper}>
+    <article
+      css={css`
+        ${contentWrapper}
+        ${mq[4]} {
+          header {
+            flex-direction: row;
+
+            div {
+              width: 50%;
+              h3 {
+                line-height: 2.5rem;
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+      `}
+    >
       <header>
-        <h3>
-          {icon}
-          {title}
-        </h3>
-        {image}
+        <div>
+          <h3>
+            {icon}
+            {title}
+          </h3>
+          {image}
+        </div>
+        <div>
+          <p>{period}</p>
+          <span>{description}</span>
+        </div>
       </header>
-      <div>
-        <p>{period}</p>
-        <span>{description}</span>
-      </div>
 
       <ul>
         {_.map(development, (value, key) => {
@@ -120,7 +148,13 @@ const Slide = ({
             <li key={key}>
               <span id="title">{key}</span>
               <div>
-                <span>{`${value}`}</span>
+                {key === 'github' ? (
+                  <a href={value} target="_blank" rel="noreferrer">
+                    {value}
+                  </a>
+                ) : (
+                  <span>{`${value}`}</span>
+                )}
               </div>
             </li>
           ) : (

@@ -36,7 +36,7 @@ const SliderButton = css`
   }
 `;
 
-const TOTAL_SLIDE = 5;
+const TOTAL_SLIDE = 6;
 
 const Slider = ({ project }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -67,17 +67,7 @@ const Slider = ({ project }) => {
     <div css={Container}>
       <div css={SliderContainer} ref={slideRef}>
         {project.map(
-          ({
-            key,
-            title,
-            icon,
-            image,
-            description,
-            period,
-            development,
-            func,
-            github,
-          }) => {
+          ({ key, title, icon, image, description, period, development }) => {
             return (
               <Slide
                 key={key}
@@ -87,8 +77,6 @@ const Slider = ({ project }) => {
                 description={description}
                 period={period}
                 development={development}
-                func={func}
-                github={github}
               />
             );
           },
