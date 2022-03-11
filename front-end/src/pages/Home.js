@@ -21,7 +21,7 @@ const wrapperStyle = css`
   padding: 0;
   border: 0;
   width: 100vw;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 250px);
 `;
 
 const divStyle = css`
