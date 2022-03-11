@@ -2,10 +2,9 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { css, jsx } from '@emotion/react';
 import { SWRConfig } from 'swr';
-
 import { HOME_PATH, PROFILE_PATH, CONTACT_PATH } from './configs/AppConfig';
-import waterColorImg from '../asset/watercolor.jpg';
 import NavBar from './components/common/nav';
+import Footer from './components/common/footer';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Contact from './pages/Contact';
@@ -50,6 +49,7 @@ const App = () => {
           <Route path={CONTACT_PATH} element={<Contact />} />
         </Routes>
       </main>
+      <Footer />
     </SWRConfig>
   );
 };
