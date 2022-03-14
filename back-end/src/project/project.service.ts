@@ -49,4 +49,8 @@ export class ProjectService {
   getProjectById(id: string): Project {
     return this.projects.find((project) => project.id === id);
   }
+
+  deleteProject(id: string): void {
+    this.projects = this.projects.filter((project) => project.id !== id);
+  }
 }
