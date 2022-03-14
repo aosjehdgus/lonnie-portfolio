@@ -45,4 +45,8 @@ export class ProjectService {
     this.projects.push(project);
     return project;
   }
+
+  getProjectById(id: string): Project {
+    return this.projects.find((project) => project.id === id);
+  }
 }
