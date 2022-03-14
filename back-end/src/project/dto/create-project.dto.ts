@@ -1,4 +1,4 @@
-export interface Project {
+export class CreateProjectDto {
   id: string;
   title: string;
   icon: object;
