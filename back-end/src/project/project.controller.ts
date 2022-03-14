@@ -6,6 +6,8 @@ import {
   Param,
   Patch,
   Post,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { CreateProjectDto } from './dto/create-project.dto';
 import { Project } from './project.model';
@@ -21,6 +23,7 @@ export class ProjectController {
   }
 
   @Post()
+  @UsePipes(ValidationPipe)
   createProject(@Body() createProjectDto: CreateProjectDto): Project {
     return this.projectService.createProject(createProjectDto);
   }

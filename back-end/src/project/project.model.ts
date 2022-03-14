@@ -5,7 +5,7 @@ export interface Project {
   image: string;
   description: string;
   period: string;
-  github: string;
+  github?: string;
   summary: string[];
   frontend?: string[];
   backend?: string[];
