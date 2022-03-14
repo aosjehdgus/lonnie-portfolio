@@ -7,7 +7,7 @@ import { ProjectService } from './project.service';
 export class ProjectController {
   constructor(private projectService: ProjectService) {}
 
-  @Get('/')
+  @Get()
   getAllProject(): Project[] {
     return this.projectService.getAllProjects();
   }

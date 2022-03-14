@@ -1,7 +1,7 @@
 export class CreateProjectDto {
   id: string;
   title: string;
-  icon: object;
+  icon: string;
   image: string;
   description: string;
   period: string;
