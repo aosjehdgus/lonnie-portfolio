@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import { Project } from './project.model';
 
 @Injectable()
 export class ProjectService {
-  private project = [];
+  private project: Project[] = [];
 
-  getAllProjects() {
+  getAllProjects(): Project[] {
     return this.project;
   }
 }
