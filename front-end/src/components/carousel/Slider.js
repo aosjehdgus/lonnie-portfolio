@@ -7,7 +7,7 @@ import Slide from './Slide';
 
 const Container = css`
   width: 60%;
-  overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 처리합니다.
+  overflow: hidden;
   position: relative;
 `;
 
