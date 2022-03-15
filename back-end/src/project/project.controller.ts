@@ -10,6 +10,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { CreateProjectDto } from './dto/create-project.dto';
+import { ProjectTitleValidationPipe } from './pipes/project-title-validation.pipe';
 import { Project } from './project.model';
 import { ProjectService } from './project.service';
 
@@ -39,7 +40,10 @@ export class ProjectController {
   }
 
   @Patch('/:id/title')
-  updateProjectTitle(@Param('id') id: string, @Body('title') title: string) {
+  updateProjectTitle(
+    @Param('id') id: string,
+    @Body('title', ProjectTitleValidationPipe) title: string,
+  ) {
     return this.projectService.updateProjectTitle(id, title);
   }
 }
