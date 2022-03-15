@@ -1,9 +1,11 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { Logger } from '@nestjs/common';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const port = 3030;
   // api 문서 이름, 부가 설명, 버전 설정
   const config = new DocumentBuilder()
     .setTitle(`Lonnie's portfolio`)
@@ -14,6 +16,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-doc', app, document);
 
-  await app.listen(3030);
+  await app.listen(port);
+  Logger.log(`Application running on port: ${port}`);
 }
 bootstrap();
