@@ -18,21 +18,21 @@ export class Project extends BaseEntity {
   description: string;
 
   @Column()
-  startDate: number;
+  startDate: string;
 
   @Column()
-  endDate: number;
+  endDate: string;
 
   @Column()
   github: string;
 
-  @Column()
+  @Column('text', { array: true })
   summary: string[];
 
-  @Column()
+  @Column('text', { array: true })
   frontend: string[];
 
-  @Column()
+  @Column('text', { array: true })
   backend: string[];
 
   @Column()

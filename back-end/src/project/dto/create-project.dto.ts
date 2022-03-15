@@ -1,23 +1,35 @@
 import { IsNotEmpty } from 'class-validator';
 export class CreateProjectDto {
-  id: string;
+  id: number;
+
   @IsNotEmpty()
   title: string;
+
   @IsNotEmpty()
   icon: string;
+
   @IsNotEmpty()
   image: string;
+
   @IsNotEmpty()
   description: string;
+
   @IsNotEmpty()
-  period: string;
-  github: string;
+  startDate: string;
+
+  @IsNotEmpty()
+  endDate: string;
+
+  github?: string;
+
   @IsNotEmpty()
   summary: string[];
+
   @IsNotEmpty()
-  frontend?: string[];
+  frontend: string[];
+
   backend?: string[];
   database?: string;
-  build?: string[];
+  build?: string;
   deploy?: string;
 }

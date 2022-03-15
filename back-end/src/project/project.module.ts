@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProjectController } from './project.controller';
-import { ProjectRepositoy } from './project.repository';
+import { ProjectRepository } from './project.repository';
 import { ProjectService } from './project.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([ProjectRepositoy])],
+  imports: [TypeOrmModule.forFeature([ProjectRepository])],
   controllers: [ProjectController],
   providers: [ProjectService],
 })

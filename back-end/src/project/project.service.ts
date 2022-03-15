@@ -1,68 +1,33 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { Project } from './project.model';
-import { v1 as uuid } from 'uuid';
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
+import { Project } from './project.entity';
+import { ProjectRepository } from './project.repository';
 
 @Injectable()
 export class ProjectService {
-  private projects: Project[] = [];
+  constructor(
+    @InjectRepository(ProjectRepository)
+    private projectRepository: ProjectRepository,
+  ) {}
 
-  getAllProjects(): Project[] {
-    return this.projects;
+  getAllProjects(): Promise<Project[]> {
+    return this.projectRepository.getAllProjects();
   }
 
-  createProject(createProjectDto: CreateProjectDto) {
-    const {
-      title,
-      icon,
-      image,
-      description,
-      period,
-      github,
-      summary,
-      frontend,
-      backend,
-      database,
-      build,
-      deploy,
-    } = createProjectDto;
-    const project: Project = {
-      id: uuid(),
-      title,
-      icon,
-      image,
-      description,
-      period,
-      github,
-      summary,
-      frontend,
-      backend,
-      database,
-      build,
-      deploy,
-    };
-
-    this.projects.push(project);
-    return project;
+  createProject(createProjectDto: CreateProjectDto): Promise<Project> {
+    return this.projectRepository.createProject(createProjectDto);
   }
 
-  getProjectById(id: string): Project {
-    const found = this.projects.find((project) => project.id === id);
-    if (!found) {
-      throw new NotFoundException(`Can't find Project with id : ${id}`);
-    }
-
-    return found;
+  getProjectById(id: number): Promise<Project> {
+    return this.projectRepository.getProjectById(id);
   }
 
-  deleteProject(id: string): void {
-    const found = this.getProjectById(id);
-    this.projects = this.projects.filter((project) => project.id !== found.id);
+  deleteProject(id: number): Promise<void> {
+    return this.projectRepository.deleteProject(id);
   }
 
-  updateProjectTitle(id: string, title: string): Project {
-    const project = this.getProjectById(id);
-    project.title = title;
-    return project;
+  updateProjectTitle(id: number, title: string): Promise<Project> {
+    return this.projectRepository.updateProjectTitle(id, title);
   }
 }
