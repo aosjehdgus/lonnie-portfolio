@@ -6,7 +6,7 @@ export class CreateProjectDto {
   title: string;
 
   @IsNotEmpty()
-  icon: string;
+  key: string;
 
   @IsNotEmpty()
   image: string;

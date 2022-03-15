@@ -9,7 +9,7 @@ export class Project extends BaseEntity {
   title: string;
 
   @Column()
-  icon: string;
+  key: string;
 
   @Column()
   image: string;

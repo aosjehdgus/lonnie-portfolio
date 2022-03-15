@@ -12,7 +12,7 @@ export class ProjectRepository extends Repository<Project> {
   async createProject(createProjectDto: CreateProjectDto): Promise<Project> {
     const {
       title,
-      icon,
+      key,
       image,
       description,
       summary,
@@ -28,7 +28,7 @@ export class ProjectRepository extends Repository<Project> {
 
     const project = this.create({
       title,
-      icon,
+      key,
       image,
       description,
       summary,
