@@ -62,46 +62,40 @@ const Slider = ({ project }) => {
     }
   };
 
-  const projectData =
-    project &&
-    project.map(
-      ({
-        id,
-        key,
-        title,
-        image,
-        startDate,
-        endDate,
-        description,
-        summary,
+  const projectData = project?.map(
+    ({
+      id,
+      key,
+      title,
+      image,
+      startDate,
+      endDate,
+      description,
+      summary,
+      github,
+      frontend,
+      backend,
+      database,
+      build,
+      deploy,
+    }) => ({
+      id,
+      key,
+      title,
+      image,
+      period: `${startDate}-${endDate}`,
+      description,
+      development: {
         github,
+        summary,
         frontend,
         backend,
         database,
         build,
         deploy,
-      }) => {
-        return {
-          id,
-          key,
-          title,
-          image,
-          period: `${startDate}-${endDate}`,
-          description,
-          development: {
-            github,
-            summary,
-            frontend,
-            backend,
-            database,
-            build,
-            deploy,
-          },
-        };
       },
-    );
-
-  console.log('projectData', projectData);
+    }),
+  );
 
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
@@ -119,21 +113,20 @@ const Slider = ({ project }) => {
         </button>
       </div>
       <div css={SliderContainer} ref={slideRef}>
-        {projectData &&
-          projectData.map(
-            ({ key, title, image, description, period, development }) => {
-              return (
-                <Slide
-                  key={key}
-                  title={title}
-                  image={image}
-                  description={description}
-                  period={period}
-                  development={development}
-                />
-              );
-            },
-          )}
+        {projectData?.map(
+          ({ key, title, image, description, period, development }) => {
+            return (
+              <Slide
+                key={key}
+                title={title}
+                image={image}
+                description={description}
+                period={period}
+                development={development}
+              />
+            );
+          },
+        )}
       </div>
     </div>
   );
