@@ -62,6 +62,47 @@ const Slider = ({ project }) => {
     }
   };
 
+  const projectData =
+    project &&
+    project.map(
+      ({
+        id,
+        key,
+        title,
+        image,
+        startDate,
+        endDate,
+        description,
+        summary,
+        github,
+        frontend,
+        backend,
+        database,
+        build,
+        deploy,
+      }) => {
+        return {
+          id,
+          key,
+          title,
+          image,
+          period: `${startDate}-${endDate}`,
+          description,
+          development: {
+            github,
+            summary,
+            frontend,
+            backend,
+            database,
+            build,
+            deploy,
+          },
+        };
+      },
+    );
+
+  console.log('projectData', projectData);
+
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out';
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)`;
@@ -78,21 +119,21 @@ const Slider = ({ project }) => {
         </button>
       </div>
       <div css={SliderContainer} ref={slideRef}>
-        {project.map(
-          ({ key, title, icon, image, description, period, development }) => {
-            return (
-              <Slide
-                key={key}
-                title={title}
-                icon={icon}
-                image={image}
-                description={description}
-                period={period}
-                development={development}
-              />
-            );
-          },
-        )}
+        {projectData &&
+          projectData.map(
+            ({ key, title, image, description, period, development }) => {
+              return (
+                <Slide
+                  key={key}
+                  title={title}
+                  image={image}
+                  description={description}
+                  period={period}
+                  development={development}
+                />
+              );
+            },
+          )}
       </div>
     </div>
   );

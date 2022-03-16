@@ -107,7 +107,7 @@ const contentWrapper = css`
   }
 `;
 
-const Slide = ({ title, icon, image, description, period, development }) => {
+const Slide = ({ title, image, description, period, development }) => {
   return (
     <article
       css={css`
@@ -129,11 +129,8 @@ const Slide = ({ title, icon, image, description, period, development }) => {
     >
       <header>
         <div>
-          <h3>
-            {icon}
-            {title}
-          </h3>
-          {image}
+          <h3>{title}</h3>
+          <img alt={title} src={image} />
         </div>
         <div>
           <p>{period}</p>
@@ -142,12 +139,12 @@ const Slide = ({ title, icon, image, description, period, development }) => {
       </header>
 
       <ul>
-        {_.map(development, (value, key) => {
+        {_.map(development, (value, sort) => {
           return value.length !== 0 ? (
-            <li key={key}>
-              <span id="title">{key}</span>
+            <li key={sort}>
+              <span id="title">{sort}</span>
               <div>
-                {key === 'github' ? (
+                {sort === 'github' ? (
                   <a href={value} target="_blank" rel="noreferrer">
                     {value}
                   </a>
