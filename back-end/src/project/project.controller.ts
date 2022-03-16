@@ -52,11 +52,4 @@ export class ProjectController {
     this.logger.log(`Try to update id ${id} project's title to ${title} `);
     return this.projectService.updateProjectTitle(id, title);
   }
-  // @Patch('/:id/title')
-  // updateProjectTitle(
-  //   @Param('id') id: string,
-  //   @Body('title', ProjectTitleValidationPipe) title: string,
-  // ) {
-  //   return this.projectService.updateProjectTitle(id, title);
-  // }
 }
