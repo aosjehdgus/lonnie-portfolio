@@ -8,15 +8,19 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css'],
+    // modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    // alias: {
+    //   '@': path.resolve(__dirname, 'src'),
+    // },
   },
   devtool: 'eval-cheap-source-map',
   devServer: {
     port: 8080,
     proxy: {
-      'api/': {
+      '/api': {
         target: 'http://localhost:3030',
         changeOrigin: true,
-        // pathRewrite: { '^/api': '' },
+        pathRewrite: { '^/api': '' },
       },
     },
     hot: true,
