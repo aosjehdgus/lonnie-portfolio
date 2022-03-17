@@ -12,7 +12,8 @@ import {
   Logger,
 } from '@nestjs/common';
 import { CreateProjectDto } from './dto/create-project.dto';
-import { ProjectTitleValidationPipe } from './pipes/project-title-validation.pipe';
+import { UpdateProjectDto } from './dto/update-project.dto';
+// import { ProjectTitleValidationPipe } from './pipes/project-title-validation.pipe';
 import { Project } from './project.entity';
 import { ProjectService } from './project.service';
 
@@ -44,12 +45,22 @@ export class ProjectController {
     this.logger.log(`Try to delete id ${id} project `);
     return this.projectService.deleteProject(id);
   }
-  @Patch('/:id/title')
-  updateProjectTitle(
+
+  @Patch('/:id')
+  updateProject(
     @Param('id', ParseIntPipe) id: number,
-    @Body('title', ProjectTitleValidationPipe) title: string,
-  ) {
-    this.logger.log(`Try to update id ${id} project's title to ${title} `);
-    return this.projectService.updateProjectTitle(id, title);
+    @Body() UpdateProejctDto: UpdateProjectDto,
+  ): Promise<Project> {
+    this.logger.log(`Try to update id ${id} `);
+    return this.projectService.updateProject(id, UpdateProejctDto);
   }
+
+  // @Patch('/:id/title')
+  // updateProjectTitle(
+  //   @Param('id', ParseIntPipe) id: number,
+  //   @Body('title', ProjectTitleValidationPipe) title: string,
+  // ) {
+  //   this.logger.log(`Try to update id ${id} project's title to ${title} `);
+  //   return this.projectService.updateProjectTitle(id, title);
+  // }
 }

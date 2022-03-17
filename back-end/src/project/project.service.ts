@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
+import { UpdateProjectDto } from './dto/update-project.dto';
 import { Project } from './project.entity';
 import { ProjectRepository } from './project.repository';
 
@@ -29,5 +30,12 @@ export class ProjectService {
 
   updateProjectTitle(id: number, title: string): Promise<Project> {
     return this.projectRepository.updateProjectTitle(id, title);
+  }
+
+  updateProject(
+    id: number,
+    updateProejctDto: UpdateProjectDto,
+  ): Promise<Project> {
+    return this.projectRepository.updateProject(id, updateProejctDto);
   }
 }

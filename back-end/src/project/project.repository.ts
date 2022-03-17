@@ -1,12 +1,17 @@
 import { NotFoundException } from '@nestjs/common';
 import { EntityRepository, Repository } from 'typeorm';
 import { CreateProjectDto } from './dto/create-project.dto';
+import { UpdateProjectDto } from './dto/update-project.dto';
 import { Project } from './project.entity';
 
 @EntityRepository(Project)
 export class ProjectRepository extends Repository<Project> {
   async getAllProjects(): Promise<Project[]> {
-    return await this.find();
+    return await this.find({
+      order: {
+        id: 'ASC',
+      },
+    });
   }
 
   async createProject(createProjectDto: CreateProjectDto): Promise<Project> {
@@ -66,6 +71,45 @@ export class ProjectRepository extends Repository<Project> {
     const project = await this.getProjectById(id);
 
     project.title = title;
+    await this.save(project);
+
+    return project;
+  }
+
+  async updateProject(
+    id: number,
+    updateProejctDto: UpdateProjectDto,
+  ): Promise<Project> {
+    const project = await this.getProjectById(id);
+
+    const {
+      title,
+      key,
+      description,
+      summary,
+      startDate,
+      endDate,
+      frontend,
+      backend,
+      database,
+      build,
+      github,
+      deploy,
+    } = updateProejctDto;
+
+    project.title = title;
+    project.key = key;
+    project.description = description;
+    project.summary = summary;
+    project.startDate = startDate;
+    project.endDate = endDate;
+    project.frontend = frontend;
+    project.backend = backend;
+    project.database = database;
+    project.build = build;
+    project.github = github;
+    project.deploy = deploy;
+
     await this.save(project);
 
     return project;
