@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
-import _ from 'lodash';
+import { map } from 'lodash/core';
 import { css, jsx } from '@emotion/react';
 import { mq } from '../../constants/MediaQuery';
 
@@ -139,7 +139,7 @@ const Slide = ({ title, image, description, period, development }) => {
       </header>
 
       <ul>
-        {_.map(development, (value, sort) => {
+        {map(development, (value, sort) => {
           return value.length !== 0 ? (
             <li key={sort}>
               <span id="title">{sort}</span>

@@ -1,13 +1,12 @@
 /** @jsx jsx */
+import { Suspense, lazy } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { css, jsx } from '@emotion/react';
 import { SWRConfig } from 'swr';
 import { HOME_PATH, PROFILE_PATH, CONTACT_PATH } from './configs/AppConfig';
 import NavBar from './components/common/nav';
 import Footer from './components/common/footer';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Contact from './pages/Contact';
+import Spinner from './components/common/Spinner';
 
 const appContainer = prop => css`
   padding-top: 120px;
@@ -27,6 +26,9 @@ const appContainer = prop => css`
       background-position: center center;
       opacity: 0.5;}`}
 `;
+const Home = lazy(() => import('./pages/Home'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 const App = () => {
   const location = useLocation();
@@ -43,11 +45,13 @@ const App = () => {
       <main
         css={appContainer(location.pathname === HOME_PATH ? 'home' : 'content')}
       >
-        <Routes>
-          <Route path={HOME_PATH} element={<Home />} />
-          <Route path={PROFILE_PATH} element={<Profile />} />
-          <Route path={CONTACT_PATH} element={<Contact />} />
-        </Routes>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path={HOME_PATH} element={<Home />} />
+            <Route path={PROFILE_PATH} element={<Profile />} />
+            <Route path={CONTACT_PATH} element={<Contact />} />
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
     </SWRConfig>
