@@ -68,7 +68,6 @@ const Slider = ({ project }) => {
       id,
       key,
       title,
-      image,
       startDate,
       endDate,
       description,
@@ -83,7 +82,6 @@ const Slider = ({ project }) => {
       id,
       key,
       title,
-      image,
       period: `${startDate}-${endDate}`,
       description,
       development: {
@@ -115,12 +113,12 @@ const Slider = ({ project }) => {
       </div>
       <div css={SliderContainer} ref={slideRef}>
         {projectData?.map(
-          ({ key, title, image, description, period, development }) => {
+          ({ key, title, description, period, development }) => {
             return (
               <Slide
                 key={key}
+                type={key}
                 title={title}
-                image={image}
                 description={description}
                 period={period}
                 development={development}

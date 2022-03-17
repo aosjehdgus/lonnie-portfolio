@@ -1,8 +1,16 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { map } from 'lodash/core';
 import { css, jsx } from '@emotion/react';
 import { mq } from '../../constants/MediaQuery';
+import LonnieImage from '../../../asset/lonnie.png';
+import DikeImage from '../../../asset/dike-img.png';
+import NiklImage from '../../../asset/nikl-img.png';
+import DongleImage from '../../../asset/dongle-img.png';
+import ManageImage from '../../../asset/management.png';
+import LoginImage from '../../../asset/login-product.png';
+import MatImage from '../../../asset/mat-img.png';
 
 const contentWrapper = css`
   width: 100%;
@@ -107,7 +115,7 @@ const contentWrapper = css`
   }
 `;
 
-const Slide = ({ title, image, description, period, development }) => {
+const Slide = ({ type, title, description, period, development }) => {
   return (
     <article
       css={css`
@@ -130,7 +138,26 @@ const Slide = ({ title, image, description, period, development }) => {
       <header>
         <div>
           <h3>{title}</h3>
-          <img alt={title} src={image} />
+          <img
+            alt={title}
+            src={
+              type === 'lonnie'
+                ? LonnieImage
+                : type === 'dike'
+                ? DikeImage
+                : type === 'nikl'
+                ? NiklImage
+                : type === 'management'
+                ? ManageImage
+                : type === 'login'
+                ? LoginImage
+                : type === 'dongle'
+                ? DongleImage
+                : type === 'mat'
+                ? MatImage
+                : ''
+            }
+          />
         </div>
         <div>
           <p>{period}</p>
