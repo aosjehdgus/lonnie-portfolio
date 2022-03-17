@@ -12,8 +12,8 @@ const spin = keyframes`
 
 const loading = css`
   width: 100%;
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  position: relative;
   top: 0;
   left: 0;
 `;

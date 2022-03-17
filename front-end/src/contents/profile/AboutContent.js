@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import moment from 'moment';
+// import moment from 'moment/src/moment';
 
 import ABOUT from '../../constants/About';
 
