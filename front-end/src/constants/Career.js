@@ -1,5 +1,5 @@
 import React from 'react';
-import { FcBriefcase } from 'react-icons/fc';
+import { FcBriefcase } from '@react-icons/all-files/fc/FcBriefcase';
 import media from '../../asset/media.svg';
 
 const CAREER = [

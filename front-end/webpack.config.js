@@ -9,7 +9,7 @@ module.exports = {
     index: './src/index.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.css', '.mjs'],
+    extensions: ['.mjs', '.js', '.jsx', '.css'],
     // modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     // alias: {
     //   '@': path.resolve(__dirname, 'src'),

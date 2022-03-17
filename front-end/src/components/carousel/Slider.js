@@ -2,7 +2,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import { useState, useEffect, useRef } from 'react';
-import { FcNext, FcPrevious } from 'react-icons/fc';
+import { FcNext } from '@react-icons/all-files/fc/FcNext';
+import { FcPrevious } from '@react-icons/all-files/fc/FcPrevious';
 import Slide from './Slide';
 
 const Container = css`

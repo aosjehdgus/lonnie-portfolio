@@ -1,12 +1,10 @@
 import React from 'react';
-import {
-  FaUser,
-  FaUniversity,
-  FaBirthdayCake,
-  FaGithub,
-  FaClipboardList,
-} from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
+import { FaUser } from '@react-icons/all-files/fa/FaUser';
+import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
+import { FaClipboardList } from '@react-icons/all-files/fa/FaClipboardList';
+import { FaUniversity } from '@react-icons/all-files/fa/FaUniversity';
+import { FaBirthdayCake } from '@react-icons/all-files/fa/FaBirthdayCake';
+import { MdEmail } from '@react-icons/all-files/md/MdEmail';
 
 const ABOUT = [
   {
