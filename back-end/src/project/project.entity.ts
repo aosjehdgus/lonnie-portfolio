@@ -25,9 +25,6 @@ export class Project extends BaseEntity {
   key: string;
 
   @Column()
-  image: string;
-
-  @Column()
   description: string;
 
   @Column()

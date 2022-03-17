@@ -13,7 +13,6 @@ export class ProjectRepository extends Repository<Project> {
     const {
       title,
       key,
-      image,
       description,
       summary,
       startDate,
@@ -29,7 +28,6 @@ export class ProjectRepository extends Repository<Project> {
     const project = this.create({
       title,
       key,
-      image,
       description,
       summary,
       startDate,

@@ -9,9 +9,6 @@ export class CreateProjectDto {
   key: string;
 
   @IsNotEmpty()
-  image: string;
-
-  @IsNotEmpty()
   description: string;
 
   @IsNotEmpty()
