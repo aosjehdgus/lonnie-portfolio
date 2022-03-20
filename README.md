@@ -20,8 +20,7 @@
   <li>SWR</li>
   <li>Emotion.js</li>
   <li>Nest.js</li>
-  <li>Postgres</li>
-  <li>AWS </li>
+  <li>PostgreSQL</li>
 </ul>
 
 <h3> Build </h3>
