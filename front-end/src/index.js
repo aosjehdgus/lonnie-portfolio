@@ -6,7 +6,7 @@ import App from './App';
 import GlobalStyle from './GlobalStyle';
 
 ReactDOM.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter>
     <Global styles={GlobalStyle} />
     <App />
   </BrowserRouter>,
