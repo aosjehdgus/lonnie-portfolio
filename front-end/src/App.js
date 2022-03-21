@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { css, jsx } from '@emotion/react';
 import { SWRConfig } from 'swr';
-import { HOME_PATH, PROFILE_PATH, CONTACT_PATH } from './configs/AppConfig';
+import { HOME_PATH, PROFILE_PATH } from './configs/AppConfig';
 import NavBar from './components/common/nav';
 import Footer from './components/common/footer';
 import Spinner from './components/common/Spinner';
@@ -28,7 +28,6 @@ const appContainer = prop => css`
 `;
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
-const Contact = lazy(() => import('./pages/Contact'));
 
 const App = () => {
   const location = useLocation();
@@ -49,7 +48,7 @@ const App = () => {
           <Routes>
             <Route path={HOME_PATH} element={<Home />} />
             <Route path={PROFILE_PATH} element={<Profile />} />
-            <Route path={CONTACT_PATH} element={<Contact />} />
+            {/* <Route path={CONTACT_PATH} element={<Contact />} /> */}
           </Routes>
         </Suspense>
       </main>

@@ -1,4 +1,4 @@
-import { HOME_PATH, PROFILE_PATH, CONTACT_PATH } from './AppConfig';
+import { HOME_PATH, PROFILE_PATH } from './AppConfig';
 
 export const HOME = [
   {
@@ -14,13 +14,6 @@ export const PROFILE = [
   },
 ];
 
-export const CONTACT = [
-  {
-    title: 'Contact',
-    path: CONTACT_PATH,
-  },
-];
-
-const NAV_CONFIG = [...HOME, ...PROFILE, ...CONTACT];
+const NAV_CONFIG = [...HOME, ...PROFILE];
 
 export default NAV_CONFIG;
