@@ -6,6 +6,10 @@
 <div align="center">
 <!--   <img alt="Demo" src="" /> -->
 </div>
+<h3> Period </h3>
+<ul>
+  <li>2022.02 -2022.03</li>
+</ul>
 <h3> Description </h3>
 <ul>
   <li>It's my developer portfolio page and I try to apply new skills for this page.</li>
@@ -28,5 +32,3 @@
   <li>Webpack5</li>
   <li>Babel7</li>
 </ul>
-
----
