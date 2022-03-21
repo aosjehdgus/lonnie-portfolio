@@ -4,10 +4,12 @@
   "main": "index.js",
   "repository": "https://github.com/aosjehdgus/lonnie-portfolio.git",
   "author": "lonnie <aosjehdgus@naver.com>",
+  "homepage": "https://aosjehdgus.github.io/lonnie-portfolio",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@react-icons/all-files": "^4.1.0",
+    "gh-pages": "^3.2.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "prop-types": "^15.8.1",
@@ -19,7 +21,9 @@
   },
   "scripts": {
     "dev": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.17.2",
