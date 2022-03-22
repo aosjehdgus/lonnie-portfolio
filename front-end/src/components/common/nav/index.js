@@ -1,12 +1,11 @@
+/* eslint-disable react/prop-types */
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
 import NavTitle from './NavTitle';
 import NavList from './NavList';
 import NavLink from './NavLink';
-import NavToggle from './NavToggle';
+// import NavToggle from './NavToggle';
 import NAV_CONFIG from '../../../configs/NavConfig';
-
-const cornSilk = 'rgb(237, 195, 115)';
 
 const horizontalNavWrapper = css`
   display: flex;
@@ -28,17 +27,21 @@ const navListWrapper = css`
   padding: 10px 30px 10px 10px;
 `;
 
-const NavBar = () => {
+const NavBar = ({ situation }) => {
   return (
     <nav css={horizontalNavWrapper}>
       <NavTitle />
       <ul css={navListWrapper}>
         <NavList>
           {NAV_CONFIG.map(item => {
-            return <NavLink key={item.path} item={item} />;
+            return situation !== '404' ? (
+              <NavLink key={item.path} item={item} />
+            ) : (
+              <div key={item.path} />
+            );
           })}
         </NavList>
-        <NavToggle />
+        {/* <NavToggle /> */}
       </ul>
     </nav>
   );

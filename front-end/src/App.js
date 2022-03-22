@@ -28,6 +28,7 @@ const appContainer = prop => css`
 `;
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
+const Error404 = lazy(() => import('./pages/errors/404'));
 
 const App = () => {
   const location = useLocation();
@@ -39,8 +40,16 @@ const App = () => {
       }}
     >
       <header>
-        <NavBar />
+        <NavBar
+          situation={
+            location.pathname === HOME_PATH ||
+            location.pathname === PROFILE_PATH
+              ? ''
+              : '404'
+          }
+        />
       </header>
+
       <main
         css={appContainer(location.pathname === HOME_PATH ? 'home' : 'content')}
       >
@@ -48,7 +57,7 @@ const App = () => {
           <Routes>
             <Route path={HOME_PATH} element={<Home />} />
             <Route path={PROFILE_PATH} element={<Profile />} />
-            {/* <Route path={CONTACT_PATH} element={<Contact />} /> */}
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </Suspense>
       </main>
