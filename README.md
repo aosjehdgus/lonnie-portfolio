@@ -3,7 +3,7 @@ Test change branch main to master
 
 <h2 align="center">
   
-  <a href="" target="_blank">Lonnie's Portfolio</a>
+  <a href="https://aosjehdgus.github.io/lonnie-portfolio/" target="_blank">Lonnie's Portfolio</a>
 </h2>
 <div align="center">
 <!--   <img alt="Demo" src="" /> -->
