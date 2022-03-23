@@ -51,7 +51,7 @@ const contentWrapper = prop => css`
       margin-bottom: ${prop === 'summary' ? '0' : '1rem'};
     }
     span {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: 500;
       color: rgba(0, 0, 0, 0.7);
       line-height: 1.3rem;
@@ -76,6 +76,8 @@ const contentWrapper = prop => css`
         font-size: 0.7rem;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.5);
+        width: 70px;
+        line-height: 1.3rem;
         border: 0;
       }
       span {
@@ -91,6 +93,7 @@ const contentWrapper = prop => css`
         flex-direction: column;
         justify-content: space-between;
         li {
+          width: 100px;
           font-size: 0.6rem;
           line-height: 2rem;
           color: rgba(0, 0, 0, 0.7);
@@ -118,6 +121,23 @@ const CareerContent = () => {
           <section
             css={css`
               ${contentWrapper(key)}
+              ${mq[1]} {
+                article {
+                  div {
+                    p {
+                      width: inherit;
+                    }
+                    span {
+                      width: inherit;
+                    }
+                    ul {
+                      li {
+                        width: inherit;
+                      }
+                    }
+                  }
+                }
+              }
               ${mq[2]} {
                 header {
                   h3 {
