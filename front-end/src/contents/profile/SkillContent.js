@@ -10,12 +10,12 @@ const skillContentContainer = css`
   padding: 0.5rem;
   position: relative;
   background: #f8f9fa;
-  width: 60%;
+  width: 90%;
   article {
     display: flex;
     padding: 0.5rem;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
   }
 `;
@@ -25,7 +25,7 @@ const skillContentWrapper = css`
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  width: 160px;
+  width: 240px;
   img {
     width: 1.5rem;
   }
@@ -70,7 +70,15 @@ const SkillContent = () => {
     <div
       css={css`
         ${skillContentContainer}
-        ${mq[4]} {
+        ${mq[2]} {
+          width: 80%;
+          article {
+            display: flex;
+            padding: 0.5rem;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+          }
           img {
             width: 2rem;
           }
@@ -83,12 +91,23 @@ const SkillContent = () => {
             font-size: 0.9rem;
           }
         }
+        ${mq[3]} {
+          width: 70%;
+        }
       `}
     >
       <article>
         {SKILL.map(({ icon, name, proficiency }) => {
           return (
-            <section css={skillContentWrapper} key={name}>
+            <section
+              css={css`
+                ${skillContentWrapper}
+                ${mq[2]} {
+                  width: 200px;
+                }
+              `}
+              key={name}
+            >
               {icon}
               <div>
                 <h3>{name}</h3>

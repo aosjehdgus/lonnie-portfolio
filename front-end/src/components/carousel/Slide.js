@@ -50,14 +50,14 @@ const contentWrapper = css`
         height: auto;
       }
       p {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.5);
         margin-right: 1rem;
         padding: 0.5rem;
       }
       span {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.7);
         line-height: 1.6rem;
@@ -102,6 +102,7 @@ const contentWrapper = css`
           letter-spacing: 0.05rem;
         }
         a {
+          font-size: 0.7rem;
           color: #99ccff;
         }
       }
@@ -120,15 +121,17 @@ const Slide = ({ type, title, description, period, development }) => {
     <article
       css={css`
         ${contentWrapper}
-        ${mq[4]} {
+        ${mq[2]} {
           header {
             flex-direction: row;
-
             div {
               width: 50%;
               h3 {
                 line-height: 2.5rem;
                 font-size: 1.6rem;
+              }
+              p {
+                font-size: 1.1rem;
               }
             }
           }

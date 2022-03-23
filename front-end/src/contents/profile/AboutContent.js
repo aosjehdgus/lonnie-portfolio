@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-// import moment from 'moment/src/moment';
-
 import ABOUT from '../../constants/About';
+import { mq } from '../../constants/MediaQuery';
 
 const aboutContentContainer = css`
   display: flex;
@@ -17,12 +16,13 @@ const aboutContentContainer = css`
     padding: 1rem;
     h2 {
       padding: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      line-height: 2rem;
       color: rgba(0, 0, 0, 0.7);
     }
     p {
       padding: 1rem;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: rgba(0, 0, 0, 0.5);
       line-height: 1.5rem;
     }
@@ -31,7 +31,7 @@ const aboutContentContainer = css`
     display: flex;
     padding: 1rem;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
   }
 `;
@@ -42,6 +42,10 @@ const contentWrapper = css`
   align-items: center;
   padding: 0.5rem;
   width: 250px;
+  svg {
+    width: 30px;
+    height: 30px;
+  }
   div {
     display: flex;
     width: 100%;
@@ -52,32 +56,40 @@ const contentWrapper = css`
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     h3 {
       color: rgba(0, 0, 0, 0.7);
-      font-size: 1.2rem;
+      font-size: 0.9rem;
     }
     span {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       color: rgba(0, 0, 0, 0.7);
       margin-top: 0.2rem;
-    }
-    a {
-      font-size: 0.9rem;
-      color: rgba(0, 0, 0, 0.7);
-      text-decoration: none;
-      &:hover {
-        font-size: 1.003rem;
-        color: rgba(0, 0, 0, 1);
-      }
     }
   }
 `;
 
 const AboutContent = () => {
-  // const { name, birth, university, email, github, blog } = profile || {};
-
-  // const birthday = moment(birth).format('YYYY.MM.DD');
-
   return (
-    <div css={aboutContentContainer}>
+    <div
+      css={css`
+        ${aboutContentContainer}
+        ${mq[2]} {
+          header {
+            h2 {
+              font-size: 1.5rem;
+            }
+            p {
+              font-size: 1rem;
+            }
+          }
+          article {
+            display: flex;
+            padding: 1rem;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+          }
+        }
+      `}
+    >
       <header>
         <h2>긍정적 재료로 소통하는 긍정 개발자</h2>
         <p>
@@ -91,7 +103,21 @@ const AboutContent = () => {
       <article>
         {ABOUT.map(({ icon, name, content }) => {
           return (
-            <section css={contentWrapper} key={name}>
+            <section
+              css={css`
+                ${contentWrapper}
+                ${mq[2]}{
+                  div {
+                    h3 {
+                      font-size: 1.2rem;
+                    }
+                    span {
+                      font-size: 0.9rem;
+                    }
+                }
+              `}
+              key={name}
+            >
               {icon}
               <div>
                 <h3>{name}</h3>

@@ -38,12 +38,12 @@ const contentWrapper = css`
     padding: 1rem;
     h3 {
       color: rgba(0, 0, 0, 0.7);
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       margin-left: 1rem;
       font-weight: 700;
     }
     img {
-      width: 2.5rem;
+      width: 2rem;
     }
   }
   article {
@@ -52,13 +52,13 @@ const contentWrapper = css`
     flex-grow: 3;
     padding: 1rem;
     p {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: #99ccff;
       padding: 0.5rem;
       margin-bottom: 1rem;
     }
     span {
-      font-size: 0.95rem;
+      font-size: 0.8rem;
       color: rgba(0, 0, 0, 0.7);
       padding: 0.5rem;
       font-weight: 500;
@@ -67,7 +67,7 @@ const contentWrapper = css`
       list-style-type: disc;
       margin-top: 1rem;
       li {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
         padding: 0.5rem;
         color: rgba(0, 0, 0, 0.7);
       }
@@ -80,7 +80,7 @@ const ArchiveContent = () => {
     <div
       css={css`
         ${archiveContentContainer}
-        ${mq[4]} {
+        ${mq[2]} {
           display: flex;
           width: 70%;
         }
@@ -93,9 +93,29 @@ const ArchiveContent = () => {
             href={`https://${link}`}
             css={css`
               ${contentWrapper}
-              ${mq[4]} {
+              ${mq[2]} {
                 display: block;
                 width: 70%;
+                header {
+                  h3 {
+                    font-size: 1.6rem;
+                  }
+                  img {
+                    width: 2.5rem;
+                  }
+                }
+                article {
+                  p {
+                    font-size: 0.9rem;
+                  }
+                  span {
+                    font-size: 0.95rem;
+                  }
+                  ul {
+                    li {
+                      font-size: 0.9rem;
+                    }
+                  }
               }
             `}
             rel="noreferrer"

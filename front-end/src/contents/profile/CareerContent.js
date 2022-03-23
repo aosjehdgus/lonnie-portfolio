@@ -5,6 +5,7 @@ import { mq } from '../../constants/MediaQuery';
 
 const careerContentContainer = css`
   display: block;
+  width: 100%;
   justify-content: space-around;
   border-radius: 1rem;
   padding: 0.5rem;
@@ -19,7 +20,6 @@ const contentWrapper = prop => css`
   border-radius: 12px;
   background: #f8f9fa;
   text-decoration: none;
-
   margin: 1rem;
   header {
     display: flex;
@@ -28,19 +28,23 @@ const contentWrapper = prop => css`
     padding: 1rem;
     h3 {
       color: rgba(0, 0, 0, 0.7);
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       margin-left: 1rem;
       font-weight: 700;
     }
+    svg {
+      width: 35px;
+      height: 35px;
+    }
     img {
-      width: 10rem;
+      height: 50px;
     }
   }
   div {
     padding: 0.5rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     p {
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 500;
       color: rgba(0, 0, 0, 0.5);
       margin-right: 1rem;
@@ -61,7 +65,6 @@ const contentWrapper = prop => css`
     padding: 0.5rem;
     height: 100%;
     justify-content: space-between;
-
     div {
       display: flex;
       justify-content: space-between;
@@ -70,13 +73,13 @@ const contentWrapper = prop => css`
       padding: 0.5rem;
       border: 0;
       p {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.5);
         border: 0;
       }
       span {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         color: rgba(0, 0, 0, 0.8);
         border: 0;
       }
@@ -88,7 +91,7 @@ const contentWrapper = prop => css`
         flex-direction: column;
         justify-content: space-between;
         li {
-          font-size: 0.7rem;
+          font-size: 0.6rem;
           line-height: 2rem;
           color: rgba(0, 0, 0, 0.7);
         }
@@ -102,16 +105,57 @@ const CareerContent = () => {
     <div
       css={css`
         ${careerContentContainer}
-        ${mq[4]} {
-          display: flex;
+        ${mq[2]} {
           width: 70%;
-          height: 100%;
+        }
+        ${mq[3]} {
+          display: flex;
         }
       `}
     >
       {CAREER.map(({ key, working, icon, title, description, contents }) => {
         return (
-          <section css={contentWrapper(key)} key={key}>
+          <section
+            css={css`
+              ${contentWrapper(key)}
+              ${mq[2]} {
+                header {
+                  h3 {
+                    color: rgba(0, 0, 0, 0.7);
+                    font-size: 1.6rem;
+                  }
+                  svg {
+                    width: 50px;
+                    height: 50px;
+                  }
+                  img {
+                    height: 70px;
+                  }
+                }
+                div {
+                  p {
+                    font-size: 1rem;
+                  }
+                }
+                article {
+                  div {
+                    p {
+                      font-size: 0.85rem;
+                    }
+                    span {
+                      font-size: 0.7rem;
+                    }
+                    ul {
+                      li {
+                        font-size: 0.7rem;
+                      }
+                    }
+                  }
+                }
+              }
+            `}
+            key={key}
+          >
             <header>
               {icon}
               <h3>{title}</h3>

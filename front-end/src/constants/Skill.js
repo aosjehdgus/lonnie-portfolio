@@ -36,7 +36,7 @@ const FRONT_SKILL = [
   {
     name: 'Webpack',
     description: '',
-    proficiency: 50,
+    proficiency: 57,
     icon: <img alt="react" src={WebpackLogo} />,
   },
   {
@@ -76,34 +76,29 @@ const BACK_SKILL = [
 const CLOUD_SKILL = [
   {
     name: 'AWS',
-    description: 'AWS 재밌다',
     proficiency: 51,
     icon: <img alt="react" src={AWSLogo} />,
   },
   {
     name: 'Git',
-    description: 'Git 재밌다',
     proficiency: 52,
     icon: <img alt="react" src={GitLogo} />,
   },
-  {
-    name: 'Github',
-    description: 'Github 재밌다',
-    proficiency: 53,
-    icon: <img alt="react" src={GithubLogo} />,
-  },
-  {
-    name: 'Bitbucket',
-    description: 'Bitbucket 재밌다',
-    proficiency: 54,
-    icon: <img alt="react" src={BitbucketLogo} />,
-  },
-  {
-    name: 'Sourcetree',
-    description: 'Bitbucket 재밌다',
-    proficiency: 52,
-    icon: <img alt="sourcetree" src={SourceTreeLogo} />,
-  },
+  // {
+  //   name: 'Github',
+  //   proficiency: 53,
+  //   icon: <img alt="react" src={GithubLogo} />,
+  // },
+  // {
+  //   name: 'Bitbucket',
+  //   proficiency: 54,
+  //   icon: <img alt="react" src={BitbucketLogo} />,
+  // },
+  // {
+  //   name: 'Sourcetree',
+  //   proficiency: 52,
+  //   icon: <img alt="sourcetree" src={SourceTreeLogo} />,
+  // },
 ];
 
 export const SKILL = [...FRONT_SKILL, ...BACK_SKILL, ...CLOUD_SKILL];

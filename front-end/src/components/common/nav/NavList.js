@@ -4,6 +4,7 @@
 import { css, jsx } from '@emotion/react';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { mq } from '../../../constants/MediaQuery';
 
 const navListItem = prop => css`
   a {
@@ -13,7 +14,7 @@ const navListItem = prop => css`
     color: ${prop === true
       ? 'rgba(255, 255, 255, 1)'
       : 'rgba(255, 255, 255, 0.8)'};
-    font-size: ${prop === true ? 1.5 : 1.2}rem;
+    font-size: ${prop === true ? 1.1 : 0.9}rem;
     font-weight: ${prop === true ? 700 : 500};
     text-decoration: none;
   }
@@ -45,7 +46,26 @@ const NavList = ({ children }) => {
       <li
         key={child.key}
         onClick={() => handleNavIndex(index)}
-        css={navListItem(selectedIndex === index)}
+        css={css`
+          ${navListItem(selectedIndex === index)}
+          ${mq[2]} {
+            a {
+              cursor: pointer;
+              margin: 1rem;
+              padding: 0.5rem;
+              color: ${(selectedIndex === index) === true
+                ? 'rgba(255, 255, 255, 1)'
+                : 'rgba(255, 255, 255, 0.8)'};
+              font-size: ${(selectedIndex === index) === true ? 1.5 : 1.2}rem;
+              font-weight: ${(selectedIndex === index) === true ? 700 : 500};
+              text-decoration: none;
+            }
+            a:hover {
+              color: rgba(255, 255, 255);
+              transition: 0.2s;
+            }
+          }
+        `}
       >
         {child}
       </li>

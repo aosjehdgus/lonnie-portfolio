@@ -5,9 +5,10 @@ import { useState, useEffect, useRef } from 'react';
 import { FcNext } from '@react-icons/all-files/fc/FcNext';
 import { FcPrevious } from '@react-icons/all-files/fc/FcPrevious';
 import Slide from './Slide';
+import { mq } from '../../constants/MediaQuery';
 
 const Container = css`
-  width: 60%;
+  width: 90%;
   overflow: hidden;
   position: relative;
 `;
@@ -102,7 +103,14 @@ const Slider = ({ project }) => {
   }, [currentSlide]);
 
   return (
-    <div css={Container}>
+    <div
+      css={css`
+        ${Container}
+        ${mq[2]} {
+          width: 60%;
+        }
+      `}
+    >
       <div css={SliderButtonContainer}>
         <button type="button" onClick={prevSlide} css={SliderButton}>
           <FcPrevious />

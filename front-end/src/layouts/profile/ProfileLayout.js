@@ -4,6 +4,7 @@
 /** @jsx jsx */
 import React, { useState, useEffect, useRef } from 'react';
 import { css, jsx, keyframes } from '@emotion/react';
+import { mq } from '../../constants/MediaQuery';
 
 const fadeIn = keyframes`
   from {
@@ -38,7 +39,7 @@ const profileContainer = prop => css`
 `;
 
 const profileContentTitle = prop => css`
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem 0.7rem 1rem 0.7rem;
   margin-bottom: 2rem;
   border-radius: 1rem;
@@ -82,7 +83,16 @@ const ProfileLayout = ({ title, content }) => {
     <div css={profileContainer(title)} ref={scrollRef}>
       {showElement && (
         <>
-          <h1 css={profileContentTitle(title)}>{title}</h1>
+          <h1
+            css={css`
+              ${profileContentTitle(title)}
+              ${mq[2]} {
+                font-size: 2rem;
+              }
+            `}
+          >
+            {title}
+          </h1>
           {content}
         </>
       )}

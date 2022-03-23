@@ -2,9 +2,7 @@
 import { css, jsx } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import { HOME_PATH } from '../../../configs/AppConfig';
-
-const breakpoints = [370, 576, 768, 992, 1200];
-const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
+import { mq } from '../../../constants/MediaQuery';
 
 const navigationTitle = css`
   padding: 10px;

@@ -48,7 +48,7 @@ const slide = keyframes`
 
 const staticTextStyle = css`
   color: ${veryPeri};
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   position: relative;
 `;
