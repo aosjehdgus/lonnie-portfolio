@@ -15,14 +15,14 @@ const aboutContentContainer = css`
   header {
     padding: 1rem;
     h2 {
-      padding: 1rem;
-      font-size: 1.2rem;
-      line-height: 2rem;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      font-size: 1rem;
+      line-height: 1rem;
       color: rgba(0, 0, 0, 0.7);
     }
     p {
       padding: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: rgba(0, 0, 0, 0.5);
       line-height: 1.5rem;
     }
@@ -75,6 +75,7 @@ const AboutContent = () => {
           header {
             h2 {
               font-size: 1.5rem;
+              line-height: 2rem;
             }
             p {
               font-size: 1rem;
@@ -91,7 +92,8 @@ const AboutContent = () => {
       `}
     >
       <header>
-        <h2>긍정적 재료로 소통하는 긍정 개발자</h2>
+        <h2>긍정적 재료로 소통하는</h2>
+        <h2>긍정 개발자</h2>
         <p>
           "안녕하세요. 저는 재료공학 출신 프론트 엔드 개발자 김동현 입니다."
         </p>
