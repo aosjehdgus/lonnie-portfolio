@@ -16,8 +16,14 @@ const horizontalNavWrapper = css`
   align-items: center;
   padding: 5px 0 15px 10px;
   margin-bottom: 20px;
-  background: #001b54;
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
   z-index: 1;
+  box-shadow: inset -3px -3px 3px rgba(255, 255, 255, 1),
+    inset 3px 3px 3px rgba(255, 255, 255, 1);
 `;
 
 const navListWrapper = css`

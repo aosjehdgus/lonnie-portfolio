@@ -3,12 +3,7 @@ import { css, jsx, keyframes } from '@emotion/react';
 import { mq } from '../constants/MediaQuery';
 
 const white = 'rgb(255, 255, 255)';
-const deepTaupe = 'rgb(123, 102, 96)';
-const whiteSand = 'rgb(219, 213, 209)';
-const fuchsiaPink = 'rgb(223, 136, 183)';
-const tawnyOrange = 'rgb(211, 128, 111)';
 const veryPeri = 'rgb(102, 103, 171)';
-const cornSilk = 'rgb(237, 195, 115)';
 const paradisePink = 'rgb(228, 69, 94)';
 
 const wrapperStyle = css`
@@ -42,20 +37,20 @@ const typing = keyframes`
 
 const slide = keyframes`
   100%{
-    top: -180px;
+    top: -120px;
   }
 `;
 
 const staticTextStyle = css`
   color: ${veryPeri};
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   position: relative;
 `;
 
 const dynamicTextStyle = css`
-  line-height: 90px;
-  height: 90px;
+  line-height: 60px;
+  height: 60px;
   overflow: hidden;
   padding-left: 20px;
   li {
@@ -87,17 +82,8 @@ const Home = () => {
         <div
           css={css`
             ${staticTextStyle}
-            ${mq[0]} {
-              font-size: 2rem;
-            }
             ${mq[1]} {
               font-size: 3rem;
-            }
-            ${mq[2]} {
-              font-size: 4rem;
-            }
-            ${mq[3]} {
-              font-size: 5rem;
             }
           `}
         >
@@ -106,24 +92,9 @@ const Home = () => {
         <ul
           css={css`
             ${dynamicTextStyle}
-            ${mq[0]} {
-              li {
-                font-size: 2rem;
-              }
-            }
             ${mq[1]} {
               li {
                 font-size: 3rem;
-              }
-            }
-            ${mq[2]} {
-              li {
-                font-size: 4rem;
-              }
-            }
-            ${mq[3]} {
-              li {
-                font-size: 5rem;
               }
             }
           `}
