@@ -1,12 +1,11 @@
 import React from 'react';
-import {
-  FcFaq,
-  FcFinePrint,
-  FcList,
-  FcRegisteredTrademark,
-  FcTemplate,
-  FcShop,
-} from 'react-icons/fc';
+
+import { FcFaq } from '@react-icons/all-files/fc/FcFaq';
+import { FcShop } from '@react-icons/all-files/fc/FcShop';
+import { FcList } from '@react-icons/all-files/fc/FcList';
+import { FcTemplate } from '@react-icons/all-files/fc/FcTemplate';
+import { FcFinePrint } from '@react-icons/all-files/fc/FcFinePrint';
+import { FcRegisteredTrademark } from '@react-icons/all-files/fc/FcRegisteredTrademark';
 import LonnieImage from '../../asset/lonnie.png';
 import DikeImage from '../../asset/dike-img.png';
 import NiklImage from '../../asset/nikl-img.png';
