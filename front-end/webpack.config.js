@@ -93,6 +93,7 @@ module.exports = env => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: './public/index.html',
+        favicon: './asset/lp.png',
       }),
       new BundleAnalyzerPlugin(),
       new webpack.IgnorePlugin({
