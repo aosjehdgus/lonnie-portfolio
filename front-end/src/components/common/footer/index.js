@@ -53,14 +53,14 @@ const Footer = () => {
           <img src={TistoryLogo} alt="tistory" />
         </a>
         <a
-          href="https://www.instagram.com/doooonghyuni/"
+          href="https://www.facebook.com/donghyun.dongle/"
           target="_blank"
           rel="noreferrer"
         >
           <img src={FacebookLogo} alt="facebook" />
         </a>
         <a
-          href="https://www.facebook.com/donghyun.dongle/"
+          href="https://www.instagram.com/doooonghyuni/"
           target="_blank"
           rel="noreferrer"
         >
