@@ -3,15 +3,15 @@ import ReactLogo from '../../asset/react.svg';
 import ReduxLogo from '../../asset/redux.svg';
 import ReduxSagaLogo from '../../asset/redux-saga.svg';
 import WebpackLogo from '../../asset/webpack.svg';
-import NestJsLogo from '../../asset/nestjs.svg';
+// import NestJsLogo from '../../asset/nestjs.svg';
 import PostmanLogo from '../../asset/postman.svg';
 import AWSLogo from '../../asset/aws.svg';
-import BitbucketLogo from '../../asset/bitbucket.svg';
+// import BitbucketLogo from '../../asset/bitbucket.svg';
 import GitLogo from '../../asset/git.svg';
-import GithubLogo from '../../asset/github.svg';
+// import GithubLogo from '../../asset/github.svg';
 import MongoDBLogo from '../../asset/mongodb.svg';
 import NodeJsLogo from '../../asset/nodejs.svg';
-import SourceTreeLogo from '../../asset/sourcetree.svg';
+// import SourceTreeLogo from '../../asset/sourcetree.svg';
 import BabelLogo from '../../asset/babel.svg';
 
 const FRONT_SKILL = [
@@ -60,12 +60,12 @@ const BACK_SKILL = [
     proficiency: 53,
     icon: <img alt="react" src={MongoDBLogo} />,
   },
-  {
-    name: 'Nest.js',
-    description: '',
-    proficiency: 12,
-    icon: <img alt="react" src={NestJsLogo} />,
-  },
+  // {
+  //   name: 'Nest.js',
+  //   description: '',
+  //   proficiency: 12,
+  //   icon: <img alt="react" src={NestJsLogo} />,
+  // },
   {
     name: 'Postman',
     description: 'Postman 재밌다',
