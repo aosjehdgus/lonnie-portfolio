@@ -106,7 +106,8 @@ const contentWrapper = css`
         a {
           font-size: 0.6rem;
           color: #99ccff;
-          overflow-wrap: anywhere;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
       #title {
