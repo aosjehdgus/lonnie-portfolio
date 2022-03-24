@@ -21,10 +21,12 @@ const appContainer = prop => css`
       right: 0;
       bottom: 0;
       left: 0;
-      background: #f8f9fa;
+      background: rgba(255, 255, 255, 1);
       background-size: cover;
       background-position: center center;
-      opacity: 0.5;}`}
+      opacity: 0.5;
+    }
+    `}
 `;
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
