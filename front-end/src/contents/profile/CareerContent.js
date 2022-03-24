@@ -62,7 +62,7 @@ const contentWrapper = prop => css`
 
   article {
     display: flex;
-    flex-direction: ${prop === 'summary' ? 'column' : 'row'};
+    flex-direction: column;
     flex-grow: 3;
     padding: 0.5rem;
     height: 100%;
@@ -70,15 +70,14 @@ const contentWrapper = prop => css`
     div {
       display: flex;
       justify-content: space-between;
-      align-items: ${prop === 'summary' ? 'center' : 'flex-start'};
-      flex-direction: ${prop === 'summary' ? 'row' : 'column'};
-      padding: 0.5rem;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0.3rem;
       border: 0;
       p {
         font-size: 0.7rem;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.5);
-        width: 70px;
         line-height: 1.3rem;
         border: 0;
       }
@@ -95,7 +94,6 @@ const contentWrapper = prop => css`
         flex-direction: column;
         justify-content: space-between;
         li {
-          width: 100px;
           font-size: 0.6rem;
           line-height: 2rem;
           color: rgba(0, 0, 0, 0.7);
@@ -125,7 +123,10 @@ const CareerContent = () => {
               ${contentWrapper(key)}
               ${mq[1]} {
                 article {
+                  flex-direction: ${key === 'summary' ? 'column' : 'row'};
                   div {
+                    align-items: ${key === 'summary' ? 'center' : 'flex-start'};
+                    flex-direction: ${key === 'summary' ? 'row' : 'column'};
                     p {
                       width: inherit;
                     }

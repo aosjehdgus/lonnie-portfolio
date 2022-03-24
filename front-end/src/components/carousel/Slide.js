@@ -14,6 +14,7 @@ import MatImage from '../../../asset/mat-img.png';
 
 const contentWrapper = css`
   width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,6 +33,7 @@ const contentWrapper = css`
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       width: 100%;
       height: 100%;
       padding: 1rem;
@@ -48,7 +50,7 @@ const contentWrapper = css`
         color: rgba(0, 0, 0, 0.7);
       }
       img {
-        width: 100%;
+        width: 80%;
         height: auto;
       }
       p {
@@ -71,7 +73,6 @@ const contentWrapper = css`
   }
 
   ul {
-    height: 100%;
     padding: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     list-style-type: square;
@@ -139,10 +140,10 @@ const Slide = ({ type, title, description, period, development }) => {
               width: 50%;
               h3 {
                 line-height: 2.5rem;
-                font-size: 1.6rem;
+                font-size: 1.4rem;
               }
               p {
-                font-size: 1.1rem;
+                font-size: 1rem;
               }
             }
           }

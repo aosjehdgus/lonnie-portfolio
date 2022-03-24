@@ -14,7 +14,7 @@ const horizontalNavWrapper = css`
   position: fixed;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0 15px 10px;
+  padding: 1rem;
   margin-bottom: 20px;
   background: rgba(255, 255, 255, 1);
   z-index: 1;
