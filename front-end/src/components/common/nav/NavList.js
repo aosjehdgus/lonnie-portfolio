@@ -11,15 +11,13 @@ const navListItem = prop => css`
     cursor: pointer;
     margin: 1rem;
     padding: 0.5rem;
-    color: ${prop === true
-      ? 'rgba(255, 255, 255, 1)'
-      : 'rgba(255, 255, 255, 0.8)'};
+    color: ${prop === true ? 'rgba(0, 0, 0, 1)' : 'rgba(0, 0, 0, 0.8)'};
     font-size: ${prop === true ? 1.1 : 0.9}rem;
     font-weight: ${prop === true ? 700 : 500};
     text-decoration: none;
   }
   a:hover {
-    color: rgba(255, 255, 255);
+    color: rgba(0, 0, 0);
     transition: 0.2s;
   }
 `;
@@ -54,14 +52,14 @@ const NavList = ({ children }) => {
               margin: 1rem;
               padding: 0.5rem;
               color: ${(selectedIndex === index) === true
-                ? 'rgba(255, 255, 255, 1)'
-                : 'rgba(255, 255, 255, 0.8)'};
+                ? 'rgba(0, 0, 0, 1)'
+                : 'rgba(0, 0, 0, 0.8)'};
               font-size: ${(selectedIndex === index) === true ? 1.5 : 1.2}rem;
               font-weight: ${(selectedIndex === index) === true ? 700 : 500};
               text-decoration: none;
             }
             a:hover {
-              color: rgba(255, 255, 255);
+              color: rgba(0, 0, 0);
               transition: 0.2s;
             }
           }
