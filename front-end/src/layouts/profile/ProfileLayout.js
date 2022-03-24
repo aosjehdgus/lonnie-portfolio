@@ -9,7 +9,7 @@ import { mq } from '../../constants/MediaQuery';
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -23,39 +23,28 @@ const profileContainer = prop => css`
   padding: 1rem;
   padding-top: 2rem;
   div {
-    animation: ${fadeIn} 2s ease-in-out;
+    animation: ${fadeIn} 1s ease-in-out;
   }
-  background: ${prop === 'About'
-    ? '#e9ecef'
-    : prop === 'Archive'
-    ? '#dee2e6'
-    : prop === 'Skill'
-    ? '#e9ecef'
-    : prop === 'Career'
-    ? '#dee2e6'
-    : prop === 'Project'
-    ? '#e9ecef'
-    : ''};
 `;
-
 const profileContentTitle = prop => css`
   font-size: 1.5rem;
   padding: 1rem 0.7rem 1rem 0.7rem;
   margin-bottom: 2rem;
   border-radius: 1rem;
   background: ${prop === 'About'
-    ? '#ffd686'
+    ? 'rgba(255, 227, 115)'
     : prop === 'Archive'
-    ? '#feab83'
+    ? 'rgba(252, 156, 84)'
     : prop === 'Skill'
-    ? 'rgb(228, 69, 94)'
+    ? 'rgba(253, 94, 83)'
     : prop === 'Career'
-    ? '#639ad3'
+    ? 'rgba(75, 61, 96)'
     : prop === 'Project'
-    ? '#00293b'
+    ? 'rgba(21, 40, 82) '
     : ''};
   color: white;
-  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
   position: relative;
 `;
 

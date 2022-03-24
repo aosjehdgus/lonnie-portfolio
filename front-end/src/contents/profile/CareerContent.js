@@ -18,9 +18,11 @@ const contentWrapper = prop => css`
   justify-content: space-between;
   padding: 0.5rem;
   border-radius: 12px;
-  background: #f8f9fa;
+  background: rgba(0, 0, 0, 0.01);
   text-decoration: none;
   margin: 1rem;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
   header {
     display: flex;
     justify-content: center;

@@ -18,14 +18,16 @@ const contentWrapper = css`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 12px;
-  background: #f8f9fa;
+  background: rgba(0, 0, 0, 0.01);
   text-decoration: none;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
   header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     div {
       display: flex;
       flex-direction: column;
@@ -41,8 +43,8 @@ const contentWrapper = css`
         padding: 1rem;
         align-items: center;
         font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
         color: rgba(0, 0, 0, 0.7);
       }
       img {
@@ -50,14 +52,14 @@ const contentWrapper = css`
         height: auto;
       }
       p {
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.5);
         margin-right: 1rem;
         padding: 0.5rem;
       }
       span {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.7);
         line-height: 1.6rem;
@@ -79,8 +81,8 @@ const contentWrapper = css`
     justify-content: space-around;
     li {
       display: flex;
+      width: 100%;
       justify-content: space-between;
-      font-size: 0.8rem;
       line-height: 2rem;
       color: rgba(0, 0, 0, 0.7);
       span {
@@ -88,13 +90,12 @@ const contentWrapper = css`
       }
       div {
         display: flex;
-        width: 100%;
+        width: 150px;
         justify-content: flex-start;
         padding: 0.1rem;
         border: 0;
-
         span {
-          font-size: 0.8rem;
+          font-size: 0.6rem;
           color: rgba(0, 0, 0, 0.7);
           padding: 0.2rem;
           text-transform: inherit;
@@ -102,14 +103,14 @@ const contentWrapper = css`
           letter-spacing: 0.05rem;
         }
         a {
-          font-size: 0.7rem;
+          font-size: 0.6rem;
           color: #99ccff;
+          overflow-wrap: anywhere;
         }
       }
       #title {
         font-weight: 600;
-        font-size: 0.9rem;
-        width: 150px;
+        font-size: 0.8rem;
         padding: 0.2rem;
       }
     }
@@ -121,8 +122,18 @@ const Slide = ({ type, title, description, period, development }) => {
     <article
       css={css`
         ${contentWrapper}
+        ${mq[1]} {
+          ul {
+            li {
+              div {
+                width: fit-content;
+              }
+            }
+          }
+        }
         ${mq[2]} {
           header {
+            padding: 1.5rem;
             flex-direction: row;
             div {
               width: 50%;

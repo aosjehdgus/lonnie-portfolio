@@ -9,8 +9,10 @@ const skillContentContainer = css`
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
-  background: #f8f9fa;
+  background: rgba(0, 0, 0, 0.01);
   width: 90%;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
   article {
     display: flex;
     padding: 0.5rem;
@@ -38,7 +40,7 @@ const skillContentWrapper = css`
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     h3 {
       color: rgba(0, 0, 0, 0.7);
-      font-size: 1rem;
+      font-size: 0.8rem;
       margin-bottom: 0.4rem;
     }
     progress[value]::-webkit-progress-bar {
@@ -55,10 +57,10 @@ const skillContentWrapper = css`
       width: 100%;
     }
     progress[value]::-webkit-progress-value {
-      background-image: linear-gradient(to left, #2ecc71, #3498db);
+      background-image: linear-gradient(to right, #2ecc71, #3498db);
     }
     label {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       margin-top: 0.1rem;
       color: rgba(0, 0, 0, 0.7);
     }
@@ -84,11 +86,11 @@ const SkillContent = () => {
           }
           h3 {
             color: rgba(0, 0, 0, 0.7);
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 0.4rem;
           }
           label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
         }
         ${mq[3]} {

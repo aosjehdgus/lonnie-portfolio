@@ -20,16 +20,14 @@ const contentWrapper = css`
   padding: 1rem;
   padding-left: 1.5rem;
   border-radius: 12px;
-  background: #f8f9fa;
+  background: rgba(0, 0, 0, 0.01);
   text-decoration: none;
   margin: 1rem;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
+  transition: all 0.8s;
   &:hover {
-    transform: translateY(-20px);
-    article {
-      p {
-        text-decoration: underline;
-      }
-    }
+    transform: scale(0.95);
   }
   header {
     display: flex;
@@ -62,6 +60,7 @@ const contentWrapper = css`
       color: rgba(0, 0, 0, 0.7);
       padding: 0.5rem;
       font-weight: 500;
+      line-height: 1.5rem;
     }
     ul {
       list-style-type: disc;
@@ -109,11 +108,11 @@ const ArchiveContent = () => {
                     font-size: 0.9rem;
                   }
                   span {
-                    font-size: 0.95rem;
+                    font-size: 0.9rem;
                   }
                   ul {
                     li {
-                      font-size: 0.9rem;
+                      font-size: 0.8rem;
                     }
                   }
               }
@@ -126,7 +125,6 @@ const ArchiveContent = () => {
               <h3>{title}</h3>
             </header>
             <article>
-              <p>{link}</p>
               <span>{description}</span>
               <ul>
                 {contents.map(content => {

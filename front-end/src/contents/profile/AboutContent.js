@@ -10,21 +10,24 @@ const aboutContentContainer = css`
   border-radius: 1rem;
   padding: 1rem;
   position: relative;
-  width: 70%;
-  background: #f8f9fa;
+  width: 90%;
+  background: rgba(0, 0, 0, 0.01);
   header {
     padding: 1rem;
-    h2 {
-      padding: 0.5rem 1rem 0.5rem 1rem;
-      font-size: 1rem;
-      line-height: 1rem;
-      color: rgba(0, 0, 0, 0.7);
-    }
-    p {
-      padding: 1rem;
-      font-size: 0.8rem;
-      color: rgba(0, 0, 0, 0.5);
-      line-height: 1.5rem;
+    div {
+      padding: 0.5rem;
+      h2 {
+        padding: 0.2rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: rgba(0, 0, 0, 0.7);
+      }
+      p {
+        padding: 0.2rem;
+        font-size: 0.8rem;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 1.5rem;
+      }
     }
   }
   article {
@@ -34,6 +37,8 @@ const aboutContentContainer = css`
     justify-content: center;
     flex-wrap: wrap;
   }
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
 `;
 
 const contentWrapper = css`
@@ -92,15 +97,19 @@ const AboutContent = () => {
       `}
     >
       <header>
-        <h2>긍정적 재료로 소통하는</h2>
-        <h2>긍정 개발자</h2>
-        <p>
-          "안녕하세요. 저는 재료공학 출신 프론트 엔드 개발자 김동현 입니다."
-        </p>
-        <p>
-          재료를 다루며 무언가 새롭게 만드는 것에 흥미를 가지면서 개발을
-          시작하게 되었습니다
-        </p>
+        <div>
+          <h2>긍정적 재료로 소통하는</h2>
+          <h2>긍정 개발자</h2>
+        </div>
+        <div>
+          <p>
+            "안녕하세요. 저는 재료공학 출신 프론트 엔드 개발자 김동현 입니다."
+          </p>
+          <p>
+            재료를 다루며 무언가 새롭게 만드는 것에 흥미를 가지면서 개발을
+            시작하게 되었습니다
+          </p>
+        </div>
       </header>
       <article>
         {ABOUT.map(({ icon, name, content }) => {
