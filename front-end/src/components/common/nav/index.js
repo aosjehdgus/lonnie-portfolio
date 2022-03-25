@@ -10,13 +10,14 @@ import NAV_CONFIG from '../../../configs/NavConfig';
 const horizontalNavWrapper = css`
   display: flex;
   width: 100%;
-  height: 100px;
   position: fixed;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   margin-bottom: 20px;
   background: rgba(255, 255, 255, 1);
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.1),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 1;
   border-radius: 12px;
 `;

@@ -10,7 +10,7 @@ const aboutContentContainer = css`
   border-radius: 1rem;
   padding: 1rem;
   position: relative;
-  width: 90%;
+  width: 80%;
   background: rgba(0, 0, 0, 0.01);
   header {
     padding: 1rem;

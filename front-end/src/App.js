@@ -8,25 +8,10 @@ import NavBar from './components/common/nav';
 import Footer from './components/common/footer';
 import Spinner from './components/common/Spinner';
 
-const appContainer = prop => css`
-  padding-top: 120px;
+const appContainer = css`
+  padding-top: 125px;
   position: relative;
   z-index: 0;
-  ${prop === 'home'
-    ? ''
-    : `&:before {
-      content: '';
-      position: absolute;
-      top: 120px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: rgba(255, 255, 255, 1);
-      background-size: cover;
-      background-position: center center;
-      opacity: 0.5;
-    }
-    `}
 `;
 const Home = lazy(() => import('./pages/Home'));
 const Profile = lazy(() => import('./pages/Profile'));
@@ -52,9 +37,7 @@ const App = () => {
         />
       </header>
 
-      <main
-        css={appContainer(location.pathname === HOME_PATH ? 'home' : 'content')}
-      >
+      <main css={appContainer}>
         <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path={HOME_PATH} element={<Home />} />

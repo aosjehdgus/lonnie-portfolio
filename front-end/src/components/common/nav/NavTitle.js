@@ -6,18 +6,12 @@ import { mq } from '../../../constants/MediaQuery';
 
 const navigationTitle = css`
   padding: 1rem;
-  border-radius: 12px;
   line-height: 1.5rem;
-  background: rgb(255, 255, 255);
-  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.1),
-    inset 3px 3px 5px rgba(0, 0, 0, 0.1);
   &:hover {
-    transform: scale(1.02);
-    transition: 0.5s;
+    transform: scale(1.05);
   }
-
   a {
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.6);
     font-weight: 900;
     font-size: 1.2rem;
     text-decoration: none;

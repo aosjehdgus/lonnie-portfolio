@@ -10,7 +10,7 @@ const skillContentContainer = css`
   padding: 0.5rem;
   position: relative;
   background: rgba(0, 0, 0, 0.01);
-  width: 90%;
+  width: 80%;
   box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
     inset 3px 3px 5px rgba(0, 0, 0, 0.03);
   article {
@@ -57,7 +57,7 @@ const skillContentWrapper = css`
       width: 100%;
     }
     progress[value]::-webkit-progress-value {
-      background-image: linear-gradient(to right, #2ecc71, #3498db);
+      background-image: linear-gradient(to right, #7cb9e8, #318ce7);
     }
     label {
       font-size: 0.7rem;

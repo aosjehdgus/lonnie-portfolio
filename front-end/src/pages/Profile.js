@@ -12,7 +12,7 @@ const profileConfig = [
   { title: 'About', content: <AboutContent /> },
   { title: 'Archive', content: <ArchiveContent /> },
   { title: 'Skill', content: <SkillContent /> },
-  { title: 'Career', content: <CareerContent /> },
+  { title: 'Activity', content: <CareerContent /> },
   { title: 'Project', content: <ProjectContent /> },
 ];
 

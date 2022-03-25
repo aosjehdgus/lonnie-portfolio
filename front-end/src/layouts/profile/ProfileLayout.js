@@ -16,12 +16,11 @@ const fadeIn = keyframes`
   }
 `;
 
-const profileContainer = prop => css`
+const profileContainer = css`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  padding-top: 2rem;
   div {
     animation: ${fadeIn} 1s ease-in-out;
   }
@@ -34,17 +33,17 @@ const profileContentTitle = prop => css`
   background: ${prop === 'About'
     ? 'rgba(255, 227, 115)'
     : prop === 'Archive'
-    ? 'rgba(252, 156, 84)'
+    ? 'rgba(0, 0, 0, 0.3)'
     : prop === 'Skill'
-    ? 'rgba(253, 94, 83)'
-    : prop === 'Career'
-    ? 'rgba(75, 61, 96)'
+    ? 'rgba(255, 227, 115)'
+    : prop === 'Activity'
+    ? 'rgba(0, 0, 0, 0.3)'
     : prop === 'Project'
-    ? 'rgba(21, 40, 82) '
+    ? 'rgba(255, 227, 115) '
     : ''};
   color: white;
-  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
-    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.2),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.2);
   position: relative;
 `;
 
@@ -69,7 +68,7 @@ const ProfileLayout = ({ title, content }) => {
   }, [scrollRef.current]);
 
   return (
-    <div css={profileContainer(title)} ref={scrollRef}>
+    <div css={profileContainer} ref={scrollRef}>
       {showElement && (
         <>
           <h1

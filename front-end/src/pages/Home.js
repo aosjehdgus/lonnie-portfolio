@@ -2,21 +2,16 @@
 import { css, jsx, keyframes } from '@emotion/react';
 import { mq } from '../constants/MediaQuery';
 
-const white = 'rgb(255, 255, 255)';
-const veryPeri = 'rgb(102, 103, 171)';
-const paradisePink = 'rgb(228, 69, 94)';
-
 const wrapperStyle = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${white};
+  background: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
   border: 0;
-  width: 100vw;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 140px);
 `;
 
 const divStyle = css`
@@ -42,7 +37,7 @@ const slide = keyframes`
 `;
 
 const staticTextStyle = css`
-  color: ${veryPeri};
+  color: rgba(0, 0, 0, 0.5);
   font-size: 1.5rem;
   font-weight: 600;
   position: relative;
@@ -55,9 +50,9 @@ const dynamicTextStyle = css`
   padding-left: 20px;
   li {
     list-style: none;
-    color: ${paradisePink};
-    font-size: 1.5rem;
-    font-weight: 600;
+    color: rgba(255, 227, 115);
+    font-size: 1.7rem;
+    font-weight: 900;
     top: 0;
     position: relative;
     animation: ${slide} 6s steps(2) infinite;
@@ -68,8 +63,8 @@ const dynamicTextStyle = css`
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: ${white};
-    border-left: 2px solid ${paradisePink};
+    background: rgb(255, 255, 255);
+    border-left: 2px solid rgba(255, 227, 115);
     animation: ${typing} 3s steps(9) infinite;
   }
 `;
@@ -94,7 +89,7 @@ const Home = () => {
             ${dynamicTextStyle}
             ${mq[1]} {
               li {
-                font-size: 3rem;
+                font-size: 3.2rem;
               }
             }
           `}

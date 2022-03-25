@@ -27,11 +27,13 @@ const Error404Container = css`
       font-size: 1rem;
       padding: 0.5rem;
       width: 50%;
-      box-shadow: inset -3px -3px 7px rgba(0, 0, 0, 0.5);
+
+      box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.2),
+        inset 3px 3px 5px rgba(0, 0, 0, 0.2);
       border-radius: 12px;
       border: 0;
       cursor: pointer;
-      background: rgb(237, 195, 115);
+      background: rgba(255, 227, 115);
       a {
         color: rgba(255, 255, 255, 0.9);
         text-decoration: none;

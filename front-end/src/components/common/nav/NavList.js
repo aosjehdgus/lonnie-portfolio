@@ -11,9 +11,9 @@ const navListItem = prop => css`
     cursor: pointer;
     margin: 1rem;
     padding: 0.5rem;
-    color: ${prop === true ? 'rgba(0, 0, 0, 1)' : 'rgba(0, 0, 0, 0.8)'};
-    font-size: ${prop === true ? 1.1 : 0.9}rem;
-    font-weight: ${prop === true ? 700 : 500};
+    color: ${prop === true ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.6)'};
+    font-size: ${prop === true ? 1.15 : 0.9}rem;
+    font-weight: ${prop === true ? 900 : 500};
     text-decoration: none;
   }
   a:hover {

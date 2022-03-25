@@ -3,12 +3,12 @@ import { css, jsx } from '@emotion/react';
 import { useState } from 'react';
 import { FcNext } from '@react-icons/all-files/fc/FcNext';
 import { FcPrevious } from '@react-icons/all-files/fc/FcPrevious';
-import { PERIOD_CAREER, CAREER } from '../../constants/Career';
+import { ACTIVITY_PERIOD, ACTIVITY } from '../../constants/Activity';
 import { mq } from '../../constants/MediaQuery';
 
-const careercareerContent = css`
+const activityContainer = css`
   display: flex;
-  width: 90%;
+  width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ const careercareerContent = css`
     inset 3px 3px 5px rgba(0, 0, 0, 0.03);
 `;
 
-const careerContent = css`
+const activityContent = css`
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
@@ -31,7 +31,7 @@ const careerContent = css`
   transition: all 0.5s;
 `;
 
-const career = css`
+const activity = css`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -109,7 +109,7 @@ const moveButton = css`
   }
 `;
 
-const TOTAL_SLIDE = PERIOD_CAREER.length;
+const TOTAL_SLIDE = ACTIVITY_PERIOD.length;
 
 const CareerContent = () => {
   const [slide, setSlide] = useState(1);
@@ -137,7 +137,7 @@ const CareerContent = () => {
   return (
     <div
       css={css`
-        ${careercareerContent}
+        ${activityContainer}
         ${mq[2]} {
           width: 80%;
         }
@@ -151,7 +151,7 @@ const CareerContent = () => {
         <button type="button" onClick={prevButton} css={moveButton}>
           <FcPrevious />
         </button>
-        {PERIOD_CAREER.map(({ key, year }) => {
+        {ACTIVITY_PERIOD.map(({ key, year }) => {
           return (
             <button
               css={css`
@@ -172,13 +172,13 @@ const CareerContent = () => {
           <FcNext />
         </button>
       </div>
-      <div css={careerContent}>
-        {CAREER.map(({ key, content }) => {
+      <div css={activityContent}>
+        {ACTIVITY.map(({ key, content }) => {
           return slide === key ? (
             <article
               key={key}
               css={css`
-                ${career}
+                ${activity}
                 ${mq[2]} {
                   div {
                     section {
@@ -202,12 +202,16 @@ const CareerContent = () => {
                     <section>
                       <h4>{period}</h4>
                       <span>{description}</span>
-                      <span>{role}</span>
-                      <ul>
-                        {detail?.map(data => (
-                          <li key={data}>{data}</li>
-                        ))}
-                      </ul>
+                      {role ? <span>{role}</span> : ''}
+                      {detail ? (
+                        <ul>
+                          {detail.map(data => (
+                            <li key={data}>{data}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        ''
+                      )}
                     </section>
                   </div>
                 );

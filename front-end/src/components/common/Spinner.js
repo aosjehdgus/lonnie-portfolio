@@ -30,8 +30,8 @@ const spinner = css`
   margin-left: -32px;
   border-radius: 50%;
   border: 8px solid transparent;
-  border-top-color: #f19022;
-  border-bottom-color: #f19022;
+  border-top-color: rgba(255, 227, 115);
+  border-bottom-color: rgba(255, 227, 115);
   animation: ${spin} 0.8s ease infinite;
 `;
 

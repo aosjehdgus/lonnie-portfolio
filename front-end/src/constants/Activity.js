@@ -1,9 +1,9 @@
-export const PERIOD_CAREER = [
+export const ACTIVITY_PERIOD = [
   { key: 1, year: '2022 - 2021' },
   { key: 2, year: '2020 - 2013' },
 ];
 
-export const CAREER = [
+export const ACTIVITY = [
   {
     key: 1,
     year: '2022 - 2021',
