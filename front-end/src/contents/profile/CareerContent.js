@@ -1,217 +1,223 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import CAREER from '../../constants/Career';
+import { useState } from 'react';
+import { FcNext } from '@react-icons/all-files/fc/FcNext';
+import { FcPrevious } from '@react-icons/all-files/fc/FcPrevious';
+import { PERIOD_CAREER, CAREER } from '../../constants/Career';
 import { mq } from '../../constants/MediaQuery';
 
-const careerContentContainer = css`
-  display: block;
-  width: 100%;
-  justify-content: space-around;
+const careercareerContent = css`
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 1rem;
   padding: 0.5rem;
   position: relative;
+  background: rgba(0, 0, 0, 0.01);
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
 `;
 
-const contentWrapper = prop => css`
+const careerContent = css`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 0.5rem;
   border-radius: 12px;
-  background: rgba(0, 0, 0, 0.01);
+  width: 100%;
   text-decoration: none;
-  margin: 1rem;
-  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.03),
-    inset 3px 3px 5px rgba(0, 0, 0, 0.03);
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    h3 {
-      color: rgba(0, 0, 0, 0.7);
-      font-size: 1.3rem;
-      margin-left: 1rem;
-      font-weight: 700;
-    }
-    svg {
-      width: 35px;
-      height: 35px;
-    }
-    img {
-      height: 50px;
-    }
-  }
-  div {
-    padding: 0.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    p {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: rgba(0, 0, 0, 0.5);
-      margin-right: 1rem;
-      margin-bottom: ${prop === 'summary' ? '0' : '1rem'};
-    }
-    span {
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: rgba(0, 0, 0, 0.7);
-      line-height: 1.3rem;
-    }
-  }
+  margin-top: 0.5rem;
+  transition: all 0.5s;
+`;
 
-  article {
+const career = css`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  div {
     display: flex;
-    flex-direction: column;
-    flex-grow: 3;
-    padding: 0.5rem;
-    height: 100%;
-    justify-content: space-between;
-    div {
+    padding: 0.3rem;
+    section {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
       flex-direction: column;
-      padding: 0.3rem;
-      border: 0;
-      p {
-        font-size: 0.7rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.5);
-        line-height: 1.3rem;
-        border: 0;
+      align-items: baseline;
+      padding: 0.5rem;
+      h4 {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        line-height: 1.5rem;
       }
       span {
-        font-size: 0.6rem;
-        color: rgba(0, 0, 0, 0.8);
-        border: 0;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        line-height: 1.5rem;
       }
       ul {
-        height: 100%;
-        list-style-type: square;
-        margin-left: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        li {
-          font-size: 0.6rem;
-          line-height: 2rem;
-          color: rgba(0, 0, 0, 0.7);
-        }
+        font-size: 0.6rem;
+        color: rgba(0, 0, 0, 0.6);
+        padding: 0.5rem;
+        line-height: 1.5rem;
       }
+    }
+    &:nth-child(odd) {
+      justify-content: flex-start;
+    }
+    &:nth-child(even) {
+      justify-content: flex-end;
     }
   }
 `;
 
+const buttonContainer = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  text-decoration: none;
+  height: 120px;
+`;
+
+const yearButton = prop => css`
+  padding: 0.5rem;
+  border: 0;
+  background: inherit;
+  margin: 0.5rem;
+  color: ${prop === true ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.5)'};
+  font-size: ${prop === true ? '1.3rem' : '0.9rem'};
+  font-weight: ${prop === true ? '900' : '500'};
+  transition: all 1s;
+  transform: ${prop === true ? 'translateY(10%)' : 'translateY(-10%)'};
+  cursor: pointer;
+`;
+
+const moveButton = css`
+  display: flex;
+  justify-content: center;
+  aling-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: inherit;
+  border: 0;
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const TOTAL_SLIDE = PERIOD_CAREER.length;
+
 const CareerContent = () => {
+  const [slide, setSlide] = useState(1);
+
+  const handleSlide = prop => {
+    setSlide(prop);
+  };
+
+  const prevButton = () => {
+    if (slide === 1) {
+      setSlide(TOTAL_SLIDE);
+    } else {
+      setSlide(slide - 1);
+    }
+  };
+
+  const nextButton = () => {
+    if (slide === TOTAL_SLIDE) {
+      setSlide(1);
+    } else {
+      setSlide(slide + 1);
+    }
+  };
+
   return (
     <div
       css={css`
-        ${careerContentContainer}
+        ${careercareerContent}
         ${mq[2]} {
-          width: 70%;
-        }
-        ${mq[3]} {
-          display: flex;
+          width: 80%;
         }
       `}
     >
-      {CAREER.map(({ key, working, icon, title, description, contents }) => {
-        return (
-          <section
-            css={css`
-              ${contentWrapper(key)}
-              ${mq[1]} {
-                article {
-                  flex-direction: ${key === 'summary' ? 'column' : 'row'};
+      <div
+        css={css`
+          ${buttonContainer}
+        `}
+      >
+        <button type="button" onClick={prevButton} css={moveButton}>
+          <FcPrevious />
+        </button>
+        {PERIOD_CAREER.map(({ key, year }) => {
+          return (
+            <button
+              css={css`
+                ${yearButton(slide === key)}
+                ${mq[2]} {
+                  font-size: ${(slide === key) === true ? '2rem' : '1.5rem'};
+                }
+              `}
+              type="button"
+              key={key}
+              onClick={() => handleSlide(key)}
+            >
+              {year}
+            </button>
+          );
+        })}
+        <button type="button" onClick={nextButton} css={moveButton}>
+          <FcNext />
+        </button>
+      </div>
+      <div css={careerContent}>
+        {CAREER.map(({ key, content }) => {
+          return slide === key ? (
+            <article
+              key={key}
+              css={css`
+                ${career}
+                ${mq[2]} {
                   div {
-                    align-items: ${key === 'summary' ? 'center' : 'flex-start'};
-                    flex-direction: ${key === 'summary' ? 'row' : 'column'};
-                    p {
-                      width: inherit;
-                    }
-                    span {
-                      width: inherit;
-                    }
-                    ul {
-                      li {
-                        width: inherit;
+                    section {
+                      h4 {
+                        font-size: 1.1rem;
+                      }
+                      span {
+                        font-size: 1rem;
+                      }
+                      ul {
+                        font-size: 0.8rem;
                       }
                     }
                   }
                 }
-              }
-              ${mq[2]} {
-                header {
-                  h3 {
-                    color: rgba(0, 0, 0, 0.7);
-                    font-size: 1.6rem;
-                  }
-                  svg {
-                    width: 50px;
-                    height: 50px;
-                  }
-                  img {
-                    height: 70px;
-                  }
-                }
-                div {
-                  p {
-                    font-size: 1rem;
-                  }
-                }
-                article {
-                  div {
-                    p {
-                      font-size: 0.85rem;
-                    }
-                    span {
-                      font-size: 0.7rem;
-                    }
-                    ul {
-                      li {
-                        font-size: 0.7rem;
-                      }
-                    }
-                  }
-                }
-              }
-            `}
-            key={key}
-          >
-            <header>
-              {icon}
-              <h3>{title}</h3>
-            </header>
-            <div>
-              <p>{working}</p>
-              <span>{description}</span>
-            </div>
-            <article>
-              {contents.map(({ period, project, content, developments }) => {
-                return key === 'summary' ? (
-                  <div key={content}>
-                    <p>{period}</p>
-                    <span>{content}</span>
-                  </div>
-                ) : (
-                  <div key={project}>
-                    <div>
-                      <p>{period}</p>
-                      <span>{project}</span>
-                    </div>
-                    <ul>
-                      {developments.map(development => {
-                        return <li key={development}>{development}</li>;
-                      })}
-                    </ul>
+              `}
+            >
+              {content.map(({ period, description, role, detail }) => {
+                return (
+                  <div key={description}>
+                    <section>
+                      <h4>{period}</h4>
+                      <span>{description}</span>
+                      <span>{role}</span>
+                      <ul>
+                        {detail?.map(data => (
+                          <li key={data}>{data}</li>
+                        ))}
+                      </ul>
+                    </section>
                   </div>
                 );
               })}
             </article>
-          </section>
-        );
-      })}
+          ) : (
+            ''
+          );
+        })}
+      </div>
     </div>
   );
 };
