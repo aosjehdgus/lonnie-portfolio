@@ -4,6 +4,7 @@ import GithubLogo from '../../../../asset/github.svg';
 import TistoryLogo from '../../../../asset/tistory.svg';
 import FacebookLogo from '../../../../asset/facebook.svg';
 import InstagramLogo from '../../../../asset/instagram.svg';
+import { mq } from '../../../constants/MediaQuery';
 
 const footerContainer = css`
   display: flex;
@@ -11,19 +12,22 @@ const footerContainer = css`
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.1);
-
+  background: rgba(255, 255, 255, 1);
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.1),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.1);
   section {
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 0.5rem;
+    align-items: center;
     span {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
+      text-align: center;
+      line-height: 1.5rem;
       color: rgba(0, 0, 0, 0.5);
     }
     img {
-      width: 2rem;
+      width: 1.5rem;
       padding: 0.5rem;
       cursor: pointer;
     }
@@ -36,7 +40,21 @@ const footerContainer = css`
 
 const Footer = () => {
   return (
-    <footer css={footerContainer}>
+    <footer
+      css={css`
+        ${footerContainer}
+        ${mq[2]} {
+          section {
+            span {
+              font-size: 0.8rem;
+            }
+            img {
+              width: 2rem;
+            }
+          }
+        }
+      `}
+    >
       <section id="logo">
         <a
           href="https://github.com/aosjehdgus"
