@@ -9,7 +9,7 @@ export const ACTIVITY = [
     year: '2022 - 2021',
     content: [
       {
-        period: '2021년 11월 - 2022년 현재',
+        period: '2021년 11월 - 현재',
         description:
           '국립 국어원 주관 비윤리적 표현 말뭉치 연구 분석 및 시범 구축 사업',
         role: '프론트 엔드 개발자로 참여',
