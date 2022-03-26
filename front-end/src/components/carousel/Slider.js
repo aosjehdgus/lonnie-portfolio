@@ -24,8 +24,7 @@ const SliderButtonContainer = css`
   height: fit-content;
   justify-content: space-between;
   position: absolute;
-  top: 42%;
-  transform: translateY(50%);
+  top: 30%;
   z-index: 1;
   width: 100%;
 `;

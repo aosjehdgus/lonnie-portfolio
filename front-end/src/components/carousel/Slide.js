@@ -66,8 +66,7 @@ const contentWrapper = css`
         color: rgba(0, 0, 0, 0.7);
         line-height: 1.6rem;
         letter-spacing: 0.05rem;
-        padding: 0.5rem;
-        padding-top: 1rem;
+        padding: 1.2rem;
       }
     }
   }
