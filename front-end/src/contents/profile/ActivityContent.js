@@ -63,6 +63,10 @@ const activity = css`
         padding: 0.5rem;
         line-height: 1.5rem;
       }
+      ul:hover {
+        display: none;
+        transition: all 1s;
+      }
     }
     &:nth-child(odd) {
       justify-content: flex-start;
@@ -91,7 +95,7 @@ const yearButton = prop => css`
   font-size: ${prop === true ? '1.3rem' : '0.9rem'};
   font-weight: ${prop === true ? '900' : '500'};
   transition: all 1s;
-  transform: ${prop === true ? 'translateY(10%)' : 'translateY(-10%)'};
+  transform: ${prop === true ? 'translateY(5%)' : 'translateY(-5%)'};
   cursor: pointer;
 `;
 
@@ -139,7 +143,7 @@ const CareerContent = () => {
       css={css`
         ${activityContainer}
         ${mq[2]} {
-          width: 80%;
+          width: 60%;
         }
       `}
     >
@@ -183,35 +187,26 @@ const CareerContent = () => {
                   div {
                     section {
                       h4 {
-                        font-size: 1.1rem;
-                      }
-                      span {
                         font-size: 1rem;
                       }
+                      span {
+                        font-size: 0.9rem;
+                      }
                       ul {
-                        font-size: 0.8rem;
+                        font-size: 0.7rem;
                       }
                     }
                   }
                 }
               `}
             >
-              {content.map(({ period, description, role, detail }) => {
+              {content.map(({ period, description, role }) => {
                 return (
                   <div key={description}>
                     <section>
                       <h4>{period}</h4>
                       <span>{description}</span>
                       {role ? <span>{role}</span> : ''}
-                      {detail ? (
-                        <ul>
-                          {detail.map(data => (
-                            <li key={data}>{data}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        ''
-                      )}
                     </section>
                   </div>
                 );
