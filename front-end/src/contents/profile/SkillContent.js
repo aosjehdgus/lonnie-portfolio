@@ -73,7 +73,7 @@ const SkillContent = () => {
       css={css`
         ${skillContentContainer}
         ${mq[2]} {
-          width: 80%;
+          width: 60%;
           article {
             display: flex;
             padding: 0.5rem;
@@ -92,9 +92,6 @@ const SkillContent = () => {
           label {
             font-size: 0.8rem;
           }
-        }
-        ${mq[3]} {
-          width: 70%;
         }
       `}
     >

@@ -77,6 +77,7 @@ const AboutContent = () => {
       css={css`
         ${aboutContentContainer}
         ${mq[2]} {
+          width: 60%;
           header {
             h2 {
               font-size: 1.5rem;
@@ -120,10 +121,10 @@ const AboutContent = () => {
                 ${mq[2]}{
                   div {
                     h3 {
-                      font-size: 1.2rem;
+                      font-size: 1rem;
                     }
                     span {
-                      font-size: 0.9rem;
+                      font-size: 0.8rem;
                     }
                 }
               `}
