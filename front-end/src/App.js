@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { css, jsx } from '@emotion/react';
 import { SWRConfig } from 'swr';

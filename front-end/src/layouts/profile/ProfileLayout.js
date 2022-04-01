@@ -1,7 +1,6 @@
 /* eslint-disable consistent-return */
-/** @jsx jsx */
 import React, { useState, useEffect, useRef } from 'react';
-import { css, jsx, keyframes } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import ProfileTitle from '../../components/common/main/ProfileTitle';
 
 const fadeIn = keyframes`

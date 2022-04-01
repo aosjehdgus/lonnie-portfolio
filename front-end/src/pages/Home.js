@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { css, jsx, keyframes } from '@emotion/react';
+import React from 'react';
+import { css, keyframes } from '@emotion/react';
 import { mq } from '../constants/MediaQuery';
 
 const wrapperStyle = css`

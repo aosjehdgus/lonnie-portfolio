@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react';
+import React from 'react';
+import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import { HOME_PATH } from '../../../configs/AppConfig';
 
