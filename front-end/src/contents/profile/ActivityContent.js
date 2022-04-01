@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { css } from '@emotion/react';
 import { FcNext } from '@react-icons/all-files/fc/FcNext';
 import { FcPrevious } from '@react-icons/all-files/fc/FcPrevious';
 import { ACTIVITY_PERIOD, ACTIVITY } from '../../constants/Activity';

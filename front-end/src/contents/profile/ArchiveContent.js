@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react';
-
+import React from 'react';
+import { css } from '@emotion/react';
 import ARCHIVE from '../../constants/Archive';
 import { mq } from '../../constants/MediaQuery';
 

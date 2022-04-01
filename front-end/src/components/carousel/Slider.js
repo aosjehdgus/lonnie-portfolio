@@ -1,7 +1,5 @@
-/* eslint-disable react/prop-types */
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react';
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { css } from '@emotion/react';
 import { FcNext } from '@react-icons/all-files/fc/FcNext';
 import { FcPrevious } from '@react-icons/all-files/fc/FcPrevious';
 import Slide from './Slide';

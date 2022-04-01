@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-/** @jsx jsx */
-import { css, jsx } from '@emotion/react';
+import React from 'react';
+import { css } from '@emotion/react';
 import NavTitle from './NavTitle';
 import NavList from './NavList';
 import NavLink from './NavLink';

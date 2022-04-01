@@ -1,8 +1,7 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable react/prop-types */
-/** @jsx jsx */
+import React from 'react';
 import { map } from 'lodash/core';
-import { css, jsx } from '@emotion/react';
+import { css } from '@emotion/react';
 import { mq } from '../../constants/MediaQuery';
 import LonnieImage from '../../../asset/lonnie.png';
 import DikeImage from '../../../asset/dike-img.png';

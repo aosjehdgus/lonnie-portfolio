@@ -7,6 +7,7 @@
   "homepage": "https://aosjehdgus.github.io/lonnie-portfolio",
   "license": "MIT",
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/react": "^11.7.1",
     "@react-icons/all-files": "^4.1.0",
     "gh-pages": "^3.2.3",

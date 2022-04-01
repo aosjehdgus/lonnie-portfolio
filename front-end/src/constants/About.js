@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
-import { FcTemplate } from '@react-icons/all-files/fc/FcTemplate';
+// import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
+// import { FcTemplate } from '@react-icons/all-files/fc/FcTemplate';
 import { FcBusinessContact } from '@react-icons/all-files/fc/FcBusinessContact';
 import { FcPlanner } from '@react-icons/all-files/fc/FcPlanner';
 import { FcMindMap } from '@react-icons/all-files/fc/FcMindMap';

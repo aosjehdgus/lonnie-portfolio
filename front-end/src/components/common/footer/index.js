@@ -1,5 +1,5 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/react';
+import React from 'react';
+import { css } from '@emotion/react';
 import GithubLogo from '../../../../asset/github.svg';
 import TistoryLogo from '../../../../asset/tistory.svg';
 import FacebookLogo from '../../../../asset/facebook.svg';
