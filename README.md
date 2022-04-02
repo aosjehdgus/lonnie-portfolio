@@ -31,3 +31,7 @@
   <li>Webpack5</li>
   <li>Babel7</li>
 </ul>
+<h3> Deploy </h3>
+<ul>
+  <li>Github pages</li>
+</ul>
