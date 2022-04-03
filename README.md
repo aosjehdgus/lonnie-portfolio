@@ -22,8 +22,6 @@
   <li>React.js</li>
   <li>SWR</li>
   <li>Emotion.js</li>
-  <li>Nest.js</li>
-  <li>PostgreSQL</li>
 </ul>
 
 <h3> Build </h3>
