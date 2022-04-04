@@ -3,13 +3,13 @@ import React from 'react';
 import { map } from 'lodash/core';
 import { css } from '@emotion/react';
 import { mq } from '../../constants/MediaQuery';
-import LonnieImage from '../../../asset/lonnie.png';
-import DikeImage from '../../../asset/dike-img.png';
-import NiklImage from '../../../asset/nikl-img.png';
-import DongleImage from '../../../asset/dongle-img.png';
-import ManageImage from '../../../asset/management.png';
-import LoginImage from '../../../asset/login-product.png';
-import MatImage from '../../../asset/mat-img.png';
+import Lonniegif from '../../../asset/lonnie.gif';
+import Dikegif from '../../../asset/dike.gif';
+import Niklgif from '../../../asset/nikl.gif';
+import Matgif from '../../../asset/mat.gif';
+// import DongleImage from '../../../asset/dongle-img.png';
+// import ManageImage from '../../../asset/management.png';
+// import LoginImage from '../../../asset/login-product.png';
 
 const contentWrapper = css`
   width: 100%;
@@ -156,19 +156,13 @@ const Slide = ({ type, title, description, period, development }) => {
             alt={title}
             src={
               type === 'lonnie'
-                ? LonnieImage
+                ? Lonniegif
                 : type === 'dike'
-                ? DikeImage
+                ? Dikegif
                 : type === 'nikl'
-                ? NiklImage
-                : type === 'management'
-                ? ManageImage
-                : type === 'login'
-                ? LoginImage
-                : type === 'dongle'
-                ? DongleImage
+                ? Niklgif
                 : type === 'mat'
-                ? MatImage
+                ? Matgif
                 : ''
             }
           />

@@ -71,20 +71,19 @@ module.exports = env => {
           use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
         },
         {
-          test: /\.png/,
-          type: 'asset/resource',
-        },
-        {
-          test: /\.jpg/,
-          type: 'asset/resource',
-        },
-        {
           test: /\.svg/,
           type: 'asset/resource',
         },
         {
           test: /\.txt/,
           type: 'asset/source',
+        },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
         },
       ],
     },

@@ -39,7 +39,7 @@ const SliderButton = css`
   }
 `;
 
-const TOTAL_SLIDE = 6;
+const TOTAL_SLIDE = 3;
 
 const Slider = ({ project }) => {
   const [currentSlide, setCurrentSlide] = useState(0);

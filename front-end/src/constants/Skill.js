@@ -54,12 +54,12 @@ const BACK_SKILL = [
     proficiency: 51,
     icon: <img alt="react" src={NodeJsLogo} />,
   },
-  {
-    name: 'MongoDB',
-    description: '',
-    proficiency: 53,
-    icon: <img alt="react" src={MongoDBLogo} />,
-  },
+  // {
+  //   name: 'MongoDB',
+  //   description: '',
+  //   proficiency: 53,
+  //   icon: <img alt="react" src={MongoDBLogo} />,
+  // },
   // {
   //   name: 'Nest.js',
   //   description: '',
