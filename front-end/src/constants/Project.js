@@ -19,7 +19,7 @@ const PROJECT = [
     title: "Lonnie's Portfolio",
     // icon: <FcFinePrint size={50} />,
     // image: <img alt="dike" src={LonnieImage} />,
-    description: `현재 보고 게시는 포트폴리오 페이지입니다. CRA를 사용하지 않고 직접 React 개발 환경을 구축한 프로젝트로,
+    description: `현재 보고계시는 포트폴리오 페이지입니다. CRA를 사용하지 않고 직접 React 개발 환경을 구축한 프로젝트로,
     Webpack을 커스터 마이징 하며 작업하였습니다. 스타일 라이브러리는 Emotion을 사용하며 css-in-js를 적용했습니다. Github pages를 통해 배포를 진행하였습니다.
     `,
     startDate: '2022.02 ',
