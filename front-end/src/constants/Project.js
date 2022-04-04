@@ -50,7 +50,7 @@ const PROJECT = [
     `,
     startDate: '2021.11 ',
     endDate: ' 2022.04',
-    github: '',
+    github: 'https://github.com/aosjehdgus/dike-project',
     summary: [
       '비윤리적 표현 평가 페이지',
       ' 작업 진행률 확인 페이지',
