@@ -9,8 +9,7 @@
 - 2022.02.11 - 진행 중
 
 #### 개발 내용
-
-<img src="https://user-images.githubusercontent.com/66933768/161486035-e0bcc09a-1071-4e81-a264-188a1a4df9e0.gif" width="350" height="250" />
+<img src="https://user-images.githubusercontent.com/66933768/161512635-0cec5b4a-005e-42fa-b5e9-ebcb36a32eed.gif" width="400" height="220" />
 
 - Profile Tab에서 About, Archive, Skill, Project로 구분
 - 각각의 내용은 아래와 같습니다.
