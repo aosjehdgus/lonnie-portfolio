@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = env => {
   const { DEV } = env;
@@ -55,6 +56,16 @@ module.exports = env => {
       assetModuleFilename: 'images/[hash][ext][query]',
     },
     optimization: {
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              drop_console: true, // 콘솔 로그를 제거한다
+            },
+          },
+        }),
+      ],
       splitChunks: {
         chunks: 'all',
       },
@@ -68,8 +79,9 @@ module.exports = env => {
         },
         {
           test: /\.css$/,
-          use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+          use: ['style-loader', 'css-loader'],
         },
+        /* 뒤에서부터 실행되므로, css-loader로 처리한 뒤 그 결과물을 style-loader로 한번 더 처리한다. */
         {
           test: /\.svg/,
           type: 'asset/resource',
