@@ -6,7 +6,7 @@
 
 ### 프로젝트 소개
 #### 개발 기간
-- 2022.02.11 - 진행 중
+- 2022.02 - 2022.04
 
 #### 개발 내용
 <img src="https://user-images.githubusercontent.com/66933768/161512635-0cec5b4a-005e-42fa-b5e9-ebcb36a32eed.gif" width="400" height="220" />
