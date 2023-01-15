@@ -1,7 +1,9 @@
 import React from 'react';
 import JavascriptLogo from '../../asset/javascript.svg';
+import TypescriptLogo from '../../asset/typescript.svg';
 import ReactLogo from '../../asset/react.svg';
 import ReduxLogo from '../../asset/redux.svg';
+import MobxLogo from '../../asset/mobx.svg';
 import ReduxSagaLogo from '../../asset/redux-saga.svg';
 import WebpackLogo from '../../asset/webpack.svg';
 import PostmanLogo from '../../asset/postman.svg';
@@ -23,6 +25,12 @@ const FRONT_SKILL = [
     icon: <img alt="javascript" src={JavascriptLogo} />,
   },
   {
+    name: 'Typescript',
+    description: '',
+    proficiency: 70,
+    icon: <img alt="typescript" src={TypescriptLogo} />,
+  },
+  {
     name: 'React',
     description: '',
     proficiency: 72,
@@ -33,6 +41,12 @@ const FRONT_SKILL = [
     description: '',
     proficiency: 70,
     icon: <img alt="redux" src={ReduxLogo} />,
+  },
+  {
+    name: 'Mobx',
+    description: '',
+    proficiency: 62,
+    icon: <img alt="mobx" src={MobxLogo} />,
   },
   {
     name: 'Redux-saga',
@@ -55,12 +69,12 @@ const FRONT_SKILL = [
 ];
 
 const BACK_SKILL = [
-  {
-    name: 'Node.js',
-    description: '',
-    proficiency: 51,
-    icon: <img alt="node" src={NodeJsLogo} />,
-  },
+  // {
+  //   name: 'Node.js',
+  //   description: '',
+  //   proficiency: 51,
+  //   icon: <img alt="node" src={NodeJsLogo} />,
+  // },
   // {
   //   name: 'MongoDB',
   //   description: '',
@@ -73,12 +87,12 @@ const BACK_SKILL = [
   //   proficiency: 12,
   //   icon: <img alt="react" src={NestJsLogo} />,
   // },
-  {
-    name: 'Postman',
-    description: 'Postman 재밌다',
-    proficiency: 62,
-    icon: <img alt="postman" src={PostmanLogo} />,
-  },
+  // {
+  //   name: 'Postman',
+  //   description: 'Postman 재밌다',
+  //   proficiency: 62,
+  //   icon: <img alt="postman" src={PostmanLogo} />,
+  // },
 ];
 const CLOUD_SKILL = [
   // {
