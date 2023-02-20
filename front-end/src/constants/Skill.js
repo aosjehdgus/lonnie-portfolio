@@ -6,10 +6,11 @@ import ReduxLogo from '../../asset/redux.svg';
 import MobxLogo from '../../asset/mobx.svg';
 import ReduxSagaLogo from '../../asset/redux-saga.svg';
 import WebpackLogo from '../../asset/webpack.svg';
-import PostmanLogo from '../../asset/postman.svg';
 import GitLogo from '../../asset/git.svg';
-import NodeJsLogo from '../../asset/nodejs.svg';
 import BabelLogo from '../../asset/babel.svg';
+import MaterialUILogo from '../../asset/material-ui.svg';
+import NodeJsLogo from '../../asset/nodejs.svg';
+import PostmanLogo from '../../asset/postman.svg';
 // import NestJsLogo from '../../asset/nestjs.svg';
 // import AWSLogo from '../../asset/aws.svg';
 // import BitbucketLogo from '../../asset/bitbucket.svg';
@@ -65,6 +66,12 @@ const FRONT_SKILL = [
     description: '',
     proficiency: 43,
     icon: <img alt="babel" src={BabelLogo} />,
+  },
+  {
+    name: 'Material-UI',
+    description: '',
+    proficiency: 63,
+    icon: <img alt="materialUI" src={MaterialUILogo} />,
   },
 ];
 
