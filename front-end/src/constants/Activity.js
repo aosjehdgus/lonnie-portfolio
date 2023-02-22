@@ -1,18 +1,32 @@
 export const ACTIVITY_PERIOD = [
-  { key: 1, year: '2022 - 2021' },
+  { key: 1, year: '2023 - 2021' },
   { key: 2, year: '2020 - 2013' },
 ];
 
 export const ACTIVITY = [
   {
     key: 1,
-    year: '2022 - 2021',
+    year: '2023 - 2021',
     content: [
       {
-        period: '2021년 11월 - 현재',
+        period: '2022년 11월 - 2023년 2월',
+        description: 'SaigeVad Developer 개발 참여',
+        role: '프론트 엔드 개발',
+        detail: [
+          'SaigeVad 모델 학습을 위한 프로젝트 생성 및 데이터 베이스 구축 페이지 개발',
+        ],
+      },
+      {
+        period: '2022년 6월 - 2022년 11월',
+        description: 'SaigeVad MlOps 개발 참여',
+        role: '프론트 엔드 개발',
+      },
+      { period: '2022년 6월', description: '세이지리서치(주) 입사' },
+      {
+        period: '2021년 11월 - 2022년 4월',
         description:
           '국립 국어원 주관 비윤리적 표현 말뭉치 연구 분석 및 시범 구축 사업',
-        role: '프론트 엔드 개발자로 참여',
+        role: '프론트 엔드 개발',
         detail: [
           '로그인 페이지 개발',
           '회원 가입 페이지 개발',
@@ -24,13 +38,13 @@ export const ACTIVITY = [
       },
       {
         period: '2021년 11월',
-        description: '(주) 미디어 코퍼스로 소속 변경',
+        description: '(주)미디어 코퍼스로 소속 변경',
       },
       {
         period: '2021년 5월 - 2021년 9월',
         description:
           '국립 국어원 주관 말뭉치 언어의 사회적 인식 조사 분류 사업',
-        role: '프론트 엔드 개발자로 참여',
+        role: '프론트 엔드 개발',
         detail: [
           '로그인 페이지 개발',
           '비밀번호 변경 페이지 개발',
@@ -40,7 +54,11 @@ export const ACTIVITY = [
           '완료 파일 검수 페이지 개발',
         ],
       },
-      { period: '2021년 4월', description: '긱웍스 에아이이 입사' },
+      {
+        period: '2021년 4월',
+        description: '긱웍스 에아이이(주) 입사',
+        detail: [],
+      },
     ],
   },
   {

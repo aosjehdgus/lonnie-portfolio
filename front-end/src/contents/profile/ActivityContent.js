@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { FcNext } from '@react-icons/all-files/fc/FcNext';
 import { FcPrevious } from '@react-icons/all-files/fc/FcPrevious';
 import { ACTIVITY_PERIOD, ACTIVITY } from '../../constants/Activity';
@@ -56,16 +57,6 @@ const activity = css`
         padding: 0.5rem;
         line-height: 1.5rem;
       }
-      ul {
-        font-size: 0.6rem;
-        color: rgba(0, 0, 0, 0.6);
-        padding: 0.5rem;
-        line-height: 1.5rem;
-      }
-      ul:hover {
-        display: none;
-        transition: all 1s;
-      }
     }
     &:nth-child(odd) {
       justify-content: flex-start;
@@ -112,9 +103,66 @@ const moveButton = css`
   }
 `;
 
+const ActivityContents = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  div {
+    display: flex;
+    padding: 0.3rem;
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      padding: 0.5rem;
+      h4 {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        line-height: 1.5rem;
+      }
+      span {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        line-height: 1.5rem;
+      }
+      p {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        line-height: 1.5rem;
+      }
+    }
+    &:nth-of-type(odd) {
+      justify-content: flex-start;
+    }
+    &:nth-of-type(even) {
+      justify-content: flex-end;
+    }
+  }
+  ${mq[2]} {
+    div {
+      section {
+        h4 {
+          font-size: 1rem;
+        }
+        span {
+          font-size: 0.9rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+`;
+
 const TOTAL_SLIDE = ACTIVITY_PERIOD.length;
 
-const CareerContent = () => {
+const ActivityContent = () => {
   const [slide, setSlide] = useState(1);
 
   const handleSlide = prop => {
@@ -175,42 +223,23 @@ const CareerContent = () => {
           <FcNext />
         </button>
       </div>
+      {/* TODO: Detail 에 대한 내용 추가 및 Css 정의 하기  */}
       <div css={activityContent}>
         {ACTIVITY.map(({ key, content }) => {
           return slide === key ? (
-            <article
-              key={key}
-              css={css`
-                ${activity}
-                ${mq[2]} {
-                  div {
-                    section {
-                      h4 {
-                        font-size: 1rem;
-                      }
-                      span {
-                        font-size: 0.9rem;
-                      }
-                      ul {
-                        font-size: 0.7rem;
-                      }
-                    }
-                  }
-                }
-              `}
-            >
+            <ActivityContents key={key}>
               {content.map(({ period, description, role }) => {
                 return (
                   <div key={description}>
                     <section>
                       <h4>{period}</h4>
                       <span>{description}</span>
-                      {role ? <span>{role}</span> : ''}
+                      {/* {role ? <p>{role}</p> : ''} */}
                     </section>
                   </div>
                 );
               })}
-            </article>
+            </ActivityContents>
           ) : (
             ''
           );
@@ -220,4 +249,4 @@ const CareerContent = () => {
   );
 };
 
-export default CareerContent;
+export default ActivityContent;
