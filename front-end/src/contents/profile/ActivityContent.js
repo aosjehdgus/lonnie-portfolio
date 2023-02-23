@@ -114,6 +114,7 @@ const ActivityContents = styled.div`
     padding: 0.3rem;
     section {
       display: flex;
+      width: 45%;
       flex-direction: column;
       align-items: baseline;
       padding: 0.5rem;
@@ -133,7 +134,7 @@ const ActivityContents = styled.div`
         color: rgba(0, 0, 0, 0.5);
         font-size: 0.7rem;
         padding: 0.5rem;
-        line-height: 1.5rem;
+        line-height: 2rem;
       }
     }
     &:nth-of-type(odd) {
@@ -234,7 +235,7 @@ const ActivityContent = () => {
                     <section>
                       <h4>{period}</h4>
                       <span>{description}</span>
-                      {/* {role ? <p>{role}</p> : ''} */}
+                      {role ? <p>{role}</p> : ''}
                     </section>
                   </div>
                 );
