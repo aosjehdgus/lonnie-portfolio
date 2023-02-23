@@ -11,7 +11,7 @@
 #### 개발 내용
 <img src="https://user-images.githubusercontent.com/66933768/161512635-0cec5b4a-005e-42fa-b5e9-ebcb36a32eed.gif" width="400" height="220" />
 
-- Profile Tab에서 About, Archive, Skill, Project로 구분
+- Profile Tab에서 About, Archive, Skill, Activity, Project로 구분
 - 각각의 내용은 아래와 같습니다.
   
 |분류|설명|
