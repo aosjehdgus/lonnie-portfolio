@@ -1,7 +1,7 @@
 import React from 'react';
-/* Layout */
-import ProfileLayout from '../layouts/profile/ProfileLayout';
-/* Content */
+/* Profile Container */
+import ProfileContatiner from '../components/common/main';
+/* Profile Content */
 import AboutContent from '../contents/profile/AboutContent';
 import ArchiveContent from '../contents/profile/ArchiveContent';
 import SkillContent from '../contents/profile/SkillContent';
@@ -19,9 +19,14 @@ const profileConfig = [
 const Profile = () => {
   return (
     <>
-      {profileConfig.map(({ title, content }) => {
-        return <ProfileLayout key={title} title={title} content={content} />;
-      })}
+      {profileConfig.map(({ title, content }, idx) => (
+        <ProfileContatiner
+          idx={idx}
+          key={title}
+          title={title}
+          content={content}
+        />
+      ))}
     </>
   );
 };
